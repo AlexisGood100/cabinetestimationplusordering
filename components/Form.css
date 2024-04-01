@@ -1,6 +1,6 @@
 .div-form{
     margin:0 auto;
-    width:50%;
+    /* width:50%; */
 }
 
 form{
@@ -9,6 +9,17 @@ form{
 form label{
     margin:1rem;
 }
-form button{
- margin:2px;
+.submit-form{
+ margin-left:2%;
+ padding:2px;
+ border: 1px solid black;
+ background-color: black;
+ color:white;
+}
+
+.submit-form:hover{
+    transform: scale(0.8);
+    transform: 1s;
+    /* background-color: black; */
+    border:white 1px solid;
 }
