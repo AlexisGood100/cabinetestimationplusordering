@@ -28,6 +28,18 @@ body.appendChild(checkBoxContainer);
 let pricingTable = document.querySelector('.pricing-table')
 
 
+let divForTableCells = makeReusableGenericDiv('div-table-cells')
+let tableForCells = TableForCells();
+divForTableCells.appendChild(tableForCells);
+body.appendChild(divForTableCells);
+
+
+
+
+
+
+
+
 
 //          need to make a section that acts a google sheet that has rows inserted.
 //                      Or rather a table?   
@@ -48,3 +60,6 @@ let pricingTable = document.querySelector('.pricing-table')
 // Cabinet Object -> Cabinet_object_array -> calulatePrice() -> return price total after doing the math for the square footage of the cabinets.
 
 
+let table_for_cells = TableForCells()
+
+console.log(table_for_cells)

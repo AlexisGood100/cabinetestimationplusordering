@@ -18,7 +18,7 @@ function makeCheckBox(name, value_of, id, price, unique_indentifier, totalPrice)
     container.appendChild(label)
     container.appendChild(checkBox)
     container.appendChild(price_p)
-
+//function for checking if the checkbox is checked or not.
     checkBox.addEventListener('change', (event)=>{
         if(event.target.checked){
             totalPrice.total += parseFloat(price);
@@ -30,7 +30,6 @@ function makeCheckBox(name, value_of, id, price, unique_indentifier, totalPrice)
             updatePricingForExtraWork(totalPrice)
         }
     })
-
 
 
     return container
