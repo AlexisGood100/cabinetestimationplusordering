@@ -14,12 +14,14 @@ body.appendChild(newMainForChoices);
 
 let checkBoxContainer = makeReusableGenericDiv('div-checkbox')
 
+let totalPrice = {total:0}
 
-let checkBoxInteriorPainting = makeCheckBox('extra-work', "Interior Painting: ", 0, 300, 'checkbox-interior-p')
-let checkBoxWallBottoms = makeCheckBox('extra-work', "Wall Bottoms: ", 1, 150, 'checkbox-wall-b')
-let checkBoxToeKick = makeCheckBox('extra-work', "Toe-Kick: ", 2, 50, 'checkbox-toekick')
+let checkBoxInteriorPainting = makeCheckBox('extra-work', "Interior Painting: ", 0, 300, 'checkbox-interior-p', totalPrice)
+let checkBoxWallBottoms = makeCheckBox('extra-work', "Wall Bottoms: ", 1, 150, 'checkbox-wall-b', totalPrice)
+let checkBoxToeKick = makeCheckBox('extra-work', "Toe-Kick: ", 2, 50, 'checkbox-toekick', totalPrice)
 newMainForChoices.appendChild(checkBoxInteriorPainting);
 newMainForChoices.appendChild(checkBoxWallBottoms);
 newMainForChoices.appendChild(checkBoxToeKick);
 
 body.appendChild(checkBoxContainer);
+let pricingTable = document.querySelector('.pricing-table')
