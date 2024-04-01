@@ -26,7 +26,6 @@ newMainForChoices.appendChild(checkBoxToeKick);
 body.appendChild(checkBoxContainer);
 let pricingTable = document.querySelector('.pricing-table')
 
-
 let divForTableCells = makeReusableGenericDiv('div-table-cells')
 let tableForCells = TableForCells();
 divForTableCells.appendChild(tableForCells);

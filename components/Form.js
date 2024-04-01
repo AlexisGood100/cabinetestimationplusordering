@@ -43,15 +43,36 @@ function makeForm() {
         let quantityValue = quantityInput.value;
         for(let i = 0; i<quantityValue;i++){
             let tr = document.createElement('tr');
+            
             tr.classList.add('tr-for-cell-rows')
             let input_width = document.createElement('input');
+            input_width.addEventListener('change', ()=>{
+                console.log('changing')
+                if(input_width.value < input_openingW.value - (.5 * input_width.value)){
+                    tr.classList.add('purple')
+                } else {
+                    tr.classList.remove('purple')
+                }
+            
+            })
+
+
+
+
+
             let input_height = document.createElement('input');
             let input_openingW = document.createElement('input');
             let input_openingH = document.createElement('input');
+            let square_footage = document.createElement('p');
+            square_footage.innerText = 0;
+            let price_indiv = document.createElement('p')
+            price_indiv.innerText = 0;
             tr.appendChild(input_width)
             tr.appendChild(input_height)
             tr.appendChild(input_openingW)
             tr.appendChild(input_openingH)
+            tr.appendChild(square_footage);
+            tr.appendChild(price_indiv)
             table.appendChild(tr)
             console.log(tr);
         }
