@@ -46,15 +46,23 @@ function makeForm() {
             
             tr.classList.add('tr-for-cell-rows')
             let input_width = document.createElement('input');
-            input_width.addEventListener('change', ()=>{
+            input_width.addEventListener('change', ()=>{ 
+                let squareFootage = (input_width.value * input_height.value)/144
                 console.log('changing')
-                if(input_width.value < input_openingW.value - (.5 * input_width.value)){
-                    tr.classList.add('purple')
+                if(input_width.value < input_openingW.value - (.5 * input_width.value)){ // feature for touching doors
+                    tr.classList.add('orange')
                 } else {
-                    tr.classList.remove('purple')
+                    tr.classList.remove('orange')
                 }
+
+                input_width.value && input_height.value ? square_footage.innerText = input_width.value * input_height.value :
+                square_footage.innerText = squareFootage;
+
+                squareFootage > 0 ? price_indiv.innerText =  squareFootage * 1.5 : price_indiv.value = 100;
+
+
             
-            })
+            }) //end of width event listener for change
 
 
 
