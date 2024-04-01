@@ -13,7 +13,6 @@ body.appendChild(form);
 body.appendChild(pricingSection)
 body.appendChild(newMainForChoices);
 
-
 let checkBoxContainer = makeReusableGenericDiv('div-checkbox')
 let totalPrice = {total:0};
 let checkBoxInteriorPainting = makeCheckBox('extra-work', "Interior Painting: ", 0, 300, 'checkbox-interior-p', totalPrice);

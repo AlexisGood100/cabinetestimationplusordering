@@ -10,16 +10,20 @@ let th_opening_width = document.createElement('th');
 th_opening_width.innerText = 'Opening Width'
 let th_opening_height = document.createElement('th');
 th_opening_height.innerText = 'Opening Height'
+let div = document.createElement('div')
 let th_square_footage = document.createElement('th');
+th_square_footage.classList.add('square-footage')
 th_square_footage.innerText = 'SQR FTGE'
 let unit_price = document.createElement('th');
+unit_price.classList.add('unit-price-th')
 unit_price.innerText = 'Unit Price'
 tr1.appendChild(th_width);
 tr1.appendChild(th_height);
 tr1.appendChild(th_opening_width);
 tr1.appendChild(th_opening_height);
-tr1.appendChild(th_square_footage);
-tr1.appendChild(unit_price);
+div.appendChild(th_square_footage);
+div.appendChild(unit_price);
+tr1.appendChild(div)
 table.appendChild(tr1);
 return table;
 };
