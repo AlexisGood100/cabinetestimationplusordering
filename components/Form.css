@@ -1,0 +1,14 @@
+.div-form{
+    margin:0 auto;
+    width:50%;
+}
+
+form{
+    margin: 0 auto;
+}
+form label{
+    margin:1rem;
+}
+form button{
+ margin:2px;
+}

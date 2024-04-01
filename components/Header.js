@@ -1,4 +1,3 @@
-
 function makeHeader(){
 let header = document.createElement('header');
 let h1_header = document.createElement('h1');
