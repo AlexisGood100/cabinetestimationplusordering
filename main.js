@@ -34,7 +34,7 @@ body.appendChild(divForTableCells);
 
 
 
-
+console.log(document.querySelector('.button-continue'))
 
 
 

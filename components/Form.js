@@ -55,7 +55,7 @@ function makeForm(total, allValuesForRowsArr) {
                
                 let squareFootage = (input_width.value * input_height.value)/144
                 let actualValue = squareFootage * 10.5
-                allValuesForRowsArr[i] = actualValue;
+                allValuesForRowsArr[i] = actualValue.toFixed(2);
                 
                     console.log('changing')
                     if(input_width.value < input_openingW.value - (.5 * input_width.value)){ // feature for touching doors
@@ -64,11 +64,11 @@ function makeForm(total, allValuesForRowsArr) {
                         tr.classList.remove('orange')
                     }
     
-                    input_width.value > 0 && input_height.value > 0 ? square_footage.innerText = squareFootage :
+                    input_width.value > 0 && input_height.value > 0 ? square_footage.innerText = squareFootage.toFixed(2) :
                     square_footage.innerText = 0; // square footage
                     price_indiv.innerText = 0;
 
-                    squareFootage > 0 ? price_indiv.innerText =  actualValue : price_indiv.value = 100; //price of actual cabinet
+                    squareFootage > 0 ? price_indiv.innerText =  actualValue.toFixed(2) : price_indiv.value = 100; //price of actual cabinet
                     allValuesForRowsArr.forEach(element => {
                         total.total += element;
                         console.log(total.total)
@@ -137,6 +137,7 @@ function makeForm(total, allValuesForRowsArr) {
                             let input_openingW = document.createElement('input');
                             let input_openingH = document.createElement('input');
                             let square_footage = document.createElement('p');
+                            square_footage.classList.add('p-square-footage')
                             let td_height = document.createElement('td');
                             td_height.appendChild(input_height)
                             let td_openingW = document.createElement('td');
@@ -151,8 +152,8 @@ function makeForm(total, allValuesForRowsArr) {
                 total.total = 0;
                     let squareFootage = (input_width.value * input_height.value)/144
                     let actualValue = squareFootage * 10.5
-                    allValuesForRowsArr[i] = actualValue;
-                    document.querySelector('.pricing-total').innerText = total.total;
+                    allValuesForRowsArr[i] = actualValue.toFixed(2);
+                    document.querySelector('.pricing-total').innerText = total.total.toFixed(2);
                      
             
                 if(input_openingH.value >  input_height.value){ // feature for touching doors
@@ -162,11 +163,11 @@ function makeForm(total, allValuesForRowsArr) {
                 }
 
 
-                input_width.value > 0 && input_height.value > 0 ? square_footage.innerText = squareFootage :
+                input_width.value > 0 && input_height.value > 0 ? square_footage.innerText = squareFootage.toFixed(2) :
                 square_footage.innerText = 0; // square footage
                 price_indiv.innerText = 0;
 
-                squareFootage > 0 ? price_indiv.innerText =  actualValue : price_indiv.innerText = 100; //price of actual cabinet
+                squareFootage > 0 ? price_indiv.innerText =  actualValue.toFixed(2) : price_indiv.innerText = 100; //price of actual cabinet
                 
                 allValuesForRowsArr.forEach(element => {
                     total.total += element;

@@ -1,21 +1,23 @@
 .table-for-cells th{
     padding: 10px;
     border: 1px solid black;
-    width: 30%; /* Adjust this value to match your desired width */
+    width: 100%; 
     text-align: center;
+    margin-left:1rem;
 }
+
 
 
 .tr-for-cell-rows {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0.5rem;
+    /* margin: 0.5rem; */
     /* width: 100%; */
 }
 
 .table-for-cells {
-    width: 80%;
+    width: 83%; 
     border-collapse: collapse;
     table-layout: fixed;
 }
@@ -26,17 +28,19 @@
     align-items: center;
     margin: 0.5rem;
     width:87vw;
+    margin-right:2rem;
 }
 
 .tr-for-cell-rows td {
     padding: 10px;
     /* border: 1px solid black; */
-    width: 100px;
+    width: 175px;
     text-align: center;
+    border:1px solid black;
 }
 
 .tr-for-cell-rows td input{
-    margin-left:10%;
+
 }
 
 .orange {
@@ -54,3 +58,8 @@
 .selected {
     color: gold;
 }
+
+/* 
+.p-square-footage{
+    text-align: center;
+}  */

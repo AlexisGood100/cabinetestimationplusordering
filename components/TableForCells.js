@@ -19,6 +19,10 @@ th_square_footage.innerText = 'SQR FTGE'
 let unit_price = document.createElement('th');
 unit_price.classList.add('unit-price-th')
 unit_price.innerText = 'Unit Price'
+let button_continue = document.createElement('button');
+button_continue.innerText = 'Generate Form.'
+button_continue.classList.add('button-continue');
+
 
 tr1.appendChild(th_type);
 tr1.appendChild(th_width);
@@ -27,6 +31,7 @@ tr1.appendChild(th_opening_width);
 tr1.appendChild(th_opening_height);
 div.appendChild(th_square_footage);
 div.appendChild(unit_price);
+div.appendChild(button_continue)
 tr1.appendChild(div);
 table.appendChild(tr1);
 return table;
