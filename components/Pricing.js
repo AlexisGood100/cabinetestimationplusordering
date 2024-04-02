@@ -15,9 +15,41 @@ function PricingArea(){
     let pricing_td5 = document.createElement('td')
     let pricing_th5 = document.createElement('th')
     
-
+    //going to clean this up but for now just testing
     let pricing_tr_for_th = document.createElement('tr');
     let pricing_tr_for_td = document.createElement('tr');
+
+    pricing_th.addEventListener('click', ()=>{
+        pricing_th.classList.add('selected-tier')
+        pricing_th2.classList.remove('selected-tier')
+        pricing_th3.classList.remove('selected-tier')
+        pricing_th4.classList.remove('selected-tier')
+        pricing_th5.classList.remove('selected-tier')
+    })
+    pricing_td2.addEventListener('click', ()=>{
+        pricing_th2.classList.add('selected-tier')
+        pricing_th.classList.remove('selected-tier')
+        pricing_th3.classList.remove('selected-tier')
+        pricing_th4.classList.remove('selected-tier')
+        pricing_th5.classList.remove('selected-tier')
+    })
+    pricing_td3.addEventListener('click', ()=>{
+        pricing_th3.classList.add('selected-tier')
+        pricing_th2.classList.remove('selected-tier')
+        pricing_th.classList.remove('selected-tier')
+        pricing_th4.classList.remove('selected-tier')
+        pricing_th5.classList.remove('selected-tier')
+    })
+    pricing_td4.addEventListener('click', ()=>{
+        pricing_th4.classList.add('selected-tier')
+        pricing_th2.classList.remove('selected-tier')
+        pricing_th3.classList.remove('selected-tier')
+        pricing_th.classList.remove('selected-tier')
+        pricing_th5.classList.remove('selected-tier')
+        let tableDvAll = document.querySelectorAll('.pricing-table td');
+        tableDvAll[4].innerText = pricing_td4.innerText;
+    })
+
 
     div.appendChild(h1_pricing)
     div.appendChild(pricing_table)

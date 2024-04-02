@@ -73,7 +73,8 @@ function makeForm(total, allValuesForRowsArr) {
                         total.total += element;
                         console.log(total.total)
                     });
-             document.querySelector('.pricing-total').innerText = total.total;
+            //  document.querySelector('.pricing-total').innerText = total.total;
+             updatePricingForExtraWork(total)
                 }) //end of  event listener for change
 
                 
@@ -89,18 +90,18 @@ function makeForm(total, allValuesForRowsArr) {
                 option_falseF.classList.add('hide')
                 option_falseF.value = 'False Front';
                 option_falseF.innerText = 'False Front'
-                option_door.addEventListener('mouseover', ()=>{
-                    option_drawer.classList.remove('hide')
-                   option_falseF.classList.remove('hide')
-               })
-               option_drawer.addEventListener('mouseover', ()=>{
-                option_door.classList.remove('hide')
-               option_falseF.classList.remove('hide')
-           })
-           option_falseF.addEventListener('mouseover', ()=>{
-            option_drawer.classList.remove('hide')
-           option_door.classList.remove('hide')
-       })
+                    option_door.addEventListener('mouseover', ()=>{
+                        option_drawer.classList.remove('hide')
+                    option_falseF.classList.remove('hide')
+                })
+                option_drawer.addEventListener('mouseover', ()=>{
+                    option_door.classList.remove('hide')
+                option_falseF.classList.remove('hide')
+            })
+            option_falseF.addEventListener('mouseover', ()=>{
+                option_drawer.classList.remove('hide')
+            option_door.classList.remove('hide')
+        })
 
                 option_door.addEventListener('click', ()=>{
                     option_door.classList.add('selected')
@@ -124,6 +125,7 @@ function makeForm(total, allValuesForRowsArr) {
                     option_door.classList.remove('selected');
                     option_falseF.classList.remove('selected');
                 })
+                
 
 
 
@@ -169,8 +171,9 @@ function makeForm(total, allValuesForRowsArr) {
                 allValuesForRowsArr.forEach(element => {
                     total.total += element;
                     console.log(total.total)
-                });
-                document.querySelector('.pricing-total').innerText = total.total;
+                });    
+                // document.querySelector('.pricing-total').innerText = total.total;
+                updatePricingForExtraWork(total)
             }) //end of width event listener for change
             
             square_footage.innerText = 0;
@@ -186,7 +189,6 @@ function makeForm(total, allValuesForRowsArr) {
             table.appendChild(tr)
             console.log(tr);
         }
-
     })
 
     divForm.appendChild(formForm);

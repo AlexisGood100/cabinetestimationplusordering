@@ -20,25 +20,14 @@ let unit_price = document.createElement('th');
 unit_price.classList.add('unit-price-th')
 unit_price.innerText = 'Unit Price'
 
-// <h2>Select a Fruit:</h2>
-
-{/* <select id="fruitSelect">
-  <option value="apple">Apple</option>
-  <option value="banana">Banana</option>
-  <option value="orange">Orange</option>
-  <option value="grape">Grape</option>
-</select>
-
-<p>Selected fruit: <span id="selectedFruit"></span></p> */}
-
-tr1.appendChild(th_type)
+tr1.appendChild(th_type);
 tr1.appendChild(th_width);
 tr1.appendChild(th_height);
 tr1.appendChild(th_opening_width);
 tr1.appendChild(th_opening_height);
 div.appendChild(th_square_footage);
 div.appendChild(unit_price);
-tr1.appendChild(div)
+tr1.appendChild(div);
 table.appendChild(tr1);
 return table;
 };
