@@ -2,6 +2,8 @@ function TableForCells(){
 let table = document.createElement('table');
 table.classList.add('table-for-cells')
 let tr1 = document.createElement('tr');
+let th_type = document.createElement('th')
+th_type.innerText = 'Type'
 let th_width = document.createElement('th');
 th_width.innerText = 'Width'
 let th_height = document.createElement('th');
@@ -17,6 +19,19 @@ th_square_footage.innerText = 'SQR FTGE'
 let unit_price = document.createElement('th');
 unit_price.classList.add('unit-price-th')
 unit_price.innerText = 'Unit Price'
+
+// <h2>Select a Fruit:</h2>
+
+{/* <select id="fruitSelect">
+  <option value="apple">Apple</option>
+  <option value="banana">Banana</option>
+  <option value="orange">Orange</option>
+  <option value="grape">Grape</option>
+</select>
+
+<p>Selected fruit: <span id="selectedFruit"></span></p> */}
+
+tr1.appendChild(th_type)
 tr1.appendChild(th_width);
 tr1.appendChild(th_height);
 tr1.appendChild(th_opening_width);

@@ -45,6 +45,7 @@ function PricingArea(){
     pricing_td4.innerText = `$${0}`
     pricing_th5.innerText = 'Total'
     pricing_td5.innerText = `$${0}`
+    pricing_td5.classList.add('pricing-total')
 
 
     return div;
