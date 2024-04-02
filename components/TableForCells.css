@@ -1,25 +1,9 @@
 .table-for-cells th{
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid #555; /* Dark grey border */
     width: 100%; 
     text-align: center;
-    margin-left:1rem;
-}
-
-
-
-.tr-for-cell-rows {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* margin: 0.5rem; */
-    /* width: 100%; */
-}
-
-.table-for-cells {
-    width: 83%; 
-    border-collapse: collapse;
-    table-layout: fixed;
+    margin-left: 1rem;
 }
 
 .tr-for-cell-rows {
@@ -27,20 +11,53 @@
     justify-content: space-between;
     align-items: center;
     margin: 0.5rem;
-    width:87vw;
-    margin-right:2rem;
+    width: 87vw;
+    margin-right: 2rem;
+}
+
+/* Background color for the body */
+body {
+    background-color: #0e2a47; /* Deep blue background */
+}
+
+
+
+/* Table row styling */
+tr {
+    background-color: #1f4068; /* Dark blue row background */
+}
+
+/* Table data styling */
+td, th {
+    padding: 10px;
+    border: 1px solid #1f4068; /* Dark blue border */
+    color: #ffffff; /* White text color */
+}
+
+/* Hover effect on table rows */
+tr:hover {
+    background-color: #3c6eaf; /* Light blue hover color */
+}
+
+
+.table-for-cells {
+    width: 83%; 
+    border-collapse: collapse;
+    table-layout: fixed;
 }
 
 .tr-for-cell-rows td {
-    padding: 10px;
-    /* border: 1px solid black; */
     width: 175px;
     text-align: center;
-    border:1px solid black;
 }
 
-.tr-for-cell-rows td input{
+table{
+        border: 1px solid #1f4068; /* Dark blue border */
+  
+}
 
+.tr-for-cell-rows{
+    margin-left: 2rem;
 }
 
 .orange {
@@ -56,10 +73,6 @@
 }
 
 .selected {
-    color: gold;
+    color: #ffea00; /* Bright yellow text color */
+    background-color: #1f4068; /* Dark blue background */
 }
-
-/* 
-.p-square-footage{
-    text-align: center;
-}  */

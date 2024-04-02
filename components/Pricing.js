@@ -19,35 +19,44 @@ function PricingArea(){
     let pricing_tr_for_th = document.createElement('tr');
     let pricing_tr_for_td = document.createElement('tr');
 
+    let all_pricing_table = document.querySelector('.pricing td')
+    console.log(all_pricing_table)
+
     pricing_th.addEventListener('click', ()=>{
         pricing_th.classList.add('selected-tier')
         pricing_th2.classList.remove('selected-tier')
         pricing_th3.classList.remove('selected-tier')
         pricing_th4.classList.remove('selected-tier')
         pricing_th5.classList.remove('selected-tier')
+        let all_pricing_table = document.querySelectorAll('.pricing-table td');
+        all_pricing_table[4].innerText = pricing_td.innerText;
     })
-    pricing_td2.addEventListener('click', ()=>{
+    pricing_th2.addEventListener('click', ()=>{
         pricing_th2.classList.add('selected-tier')
         pricing_th.classList.remove('selected-tier')
         pricing_th3.classList.remove('selected-tier')
         pricing_th4.classList.remove('selected-tier')
         pricing_th5.classList.remove('selected-tier')
+        let all_pricing_table = document.querySelectorAll('.pricing-table td');
+        all_pricing_table[4].innerText = pricing_td2.innerText;
     })
-    pricing_td3.addEventListener('click', ()=>{
+    pricing_th3.addEventListener('click', ()=>{
         pricing_th3.classList.add('selected-tier')
         pricing_th2.classList.remove('selected-tier')
         pricing_th.classList.remove('selected-tier')
         pricing_th4.classList.remove('selected-tier')
         pricing_th5.classList.remove('selected-tier')
+        let all_pricing_table = document.querySelectorAll('.pricing-table td');
+        all_pricing_table[4].innerText = pricing_td3.innerText;
     })
-    pricing_td4.addEventListener('click', ()=>{
+    pricing_th4.addEventListener('click', ()=>{
         pricing_th4.classList.add('selected-tier')
         pricing_th2.classList.remove('selected-tier')
         pricing_th3.classList.remove('selected-tier')
         pricing_th.classList.remove('selected-tier')
         pricing_th5.classList.remove('selected-tier')
-        let tableDvAll = document.querySelectorAll('.pricing-table td');
-        tableDvAll[4].innerText = pricing_td4.innerText;
+        let all_pricing_table = document.querySelectorAll('.pricing-table td');
+        all_pricing_table[4].innerText = pricing_td4.innerText;
     })
 
 

@@ -1,10 +1,25 @@
-
-
-.div-checkbox{
-    background-color: blue;
-    display:flex;
+.div-checkbox {
+    background-color: #0e2a47; /* Deep blue background */
+    display: flex;
+    /* padding: 20px; */
+    margin-top: 20px; /* Match margin-top with .div-form */
+    flex-wrap: wrap;
+    border:1px solid black;
 }
 
-.div-indiv-checkbox{
-    padding:1rem;
+.div-indiv-checkbox {
+    /* width:100vw; */
+    padding: 1rem;
+    /* flex: 1; Fill remaining space */
+    display: flex;
+    border:1px solid black;
+}
+
+.radio-label {
+    color: #ffffff; /* White text color */
+    margin-right: 10px;
+}
+
+.radio-input {
+    margin-right: 5px;
 }

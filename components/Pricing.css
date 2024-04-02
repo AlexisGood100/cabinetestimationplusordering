@@ -1,7 +1,7 @@
 .pricing-table{
-    border:1px solid black;
-    width:50%;
-    margin:0 auto;
+    border: 1px solid #555; /* Dark grey border */
+    width: 50%;
+    margin: 0 auto;
 }
 
 h1{
@@ -9,13 +9,13 @@ h1{
 }
 
 .pricing-table th{
-    border:1px solid black;
+    border: 1px solid #555; /* Dark grey border */
 }
 
 .pricing-table td{
-    border:1px solid black;
+    border: 1px solid #555; /* Dark grey border */
 }
 
 .selected-tier{
-    background-color: gold;
+    background-color: #f5f5dc; /* Beige background */
 }
