@@ -6,7 +6,7 @@ function createWorkOrder(input1, input2, input3, input4, input5, input6){
       Date_:`Date: ${input4.value}`,
       Quan:`Cabinet Total: ${input5.value}`,
       HO: `Hinge Overlay: ${input6.value}`,
-      Num: Math.floor(Math.random() * 5000) + 50000
+      Num: `Work Order #: ${Math.floor(Math.random() * 5000) + 50000}`
     };
 
 

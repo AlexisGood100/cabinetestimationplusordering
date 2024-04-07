@@ -1,5 +1,6 @@
 function createWorkOrderDisplay(workOrder){
     let divWorkOrder = document.createElement('div');
+    divWorkOrder.classList.add('div-work-order-inside')
     let p_WO_Num = document.createElement('p');
     let p_WO_UN = document.createElement('p');
     let p_WO_PN = document.createElement('p');

@@ -28,3 +28,13 @@ text-decoration: underline;
  .div-for-extra-hardware{
     width:100vw;
  }
+
+ .arrow-right{
+   border-radius: 50%;
+   background-color:red;
+ }
+
+ .arrow-left{
+   background-color:green;
+   border-radius: 50%;
+ }

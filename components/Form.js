@@ -50,10 +50,10 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
     submitForm.addEventListener('click', ()=>{  //left off here need to make it so the form data transfers and display and the sheet becomes the main focus of the page
         let table = document.querySelector('.table-for-cells')
-        let body = document.querySelector('body')
         let newWorkOrder = createWorkOrder(inputPropertyName, inputUnitNumber, inputColor, dateInput, quantityInput, hingeOverlayInput)
         console.log(newWorkOrder)
-
+        let workOrderDisplay = createWorkOrderDisplay(newWorkOrder);
+        document.querySelector('.div-work-orders').appendChild(workOrderDisplay)
         let quantityValue = quantityInput.value;
         divForm.classList.add('hide')
         updateHingeAndScrewQuantity(document.querySelectorAll('.div-for-extra-hardware div label')[0],
@@ -237,9 +237,8 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
             table.appendChild(tr)
             console.log(tr);
-//work order
-let workOrderDisplay = createWorkOrderDisplay(newWorkOrder);
-body.appendChild(workOrderDisplay);
+
+
           
         }
     })

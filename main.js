@@ -15,7 +15,9 @@ body.appendChild(html_Header);
 
 let additionalHardwareSection = additionalHardWare()
 document.querySelector('.div-additional-hardware').appendChild(additionalHardwareSection)
+let divForWorkOrder = makeReusableGenericDiv('div-work-orders');
 
+body.appendChild(divForWorkOrder);
 // end of additional work 
 body.appendChild(form);
 body.appendChild(pricingSection);
