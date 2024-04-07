@@ -11,9 +11,16 @@ let newMainForChoices = makeMainChoices();
 let pricingSection = PricingArea();
 //appending the html components to the root (body in this case)
 body.appendChild(html_Header);
+//additional work
+
+let additionalHardwareSection = additionalHardWare()
+document.querySelector('.div-additional-hardware').appendChild(additionalHardwareSection)
+
+// end of additional work 
 body.appendChild(form);
 body.appendChild(pricingSection);
 body.appendChild(newMainForChoices);
+//Checkboxes
 let checkBoxContainer = makeReusableGenericDiv('div-checkbox');
 let checkBoxInteriorPainting = makeCheckBox('extra-work', "Interior Painting: ", 0, 300, 'checkbox-interior-p', totalPrice, additionalWork);
 let checkBoxWallBottoms = makeCheckBox('extra-work', "Wall Bottoms: ", 1, 150, 'checkbox-wall-b', totalPrice, additionalWork);
@@ -22,56 +29,27 @@ let checkBoxToeKick = makeCheckBox('extra-work', "Toe-Kick: ", 2, 50, 'checkbox-
 newMainForChoices.appendChild(checkBoxInteriorPainting);
 newMainForChoices.appendChild(checkBoxWallBottoms);
 newMainForChoices.appendChild(checkBoxToeKick);
+//end of checkboxes
 
 body.appendChild(checkBoxContainer);
 let pricingTable = document.querySelector('.pricing-table');
-
+//Div for table cells
 let divForTableCells = makeReusableGenericDiv('div-table-cells');
 let tableForCells = TableForCells();
 divForTableCells.appendChild(tableForCells);
 body.appendChild(divForTableCells);
+//End of div for table cells
 
+//Additional hardware
 let divForAdditionalHardware = makeReusableGenericDiv('div-additional-hardware');
-
-
-
-
-
-
-
-console.log(document.querySelector('.button-continue'))
-
-
-
-
-//          need to make a section that acts a google sheet that has rows inserted.
-//                      Or rather a table?   
-
-//                                           App Layout
-//-----------------------------------
-// inputs for specific work order information
-//-----------------------------------------------------------------------
-// <label> </label> <input> </input> | <label> </label> <input> </input>| 
-
-//Submit button     |          <button>Submit</button                   |
-//                  ---------------------------------------------------- 
-//  Type_of_cabinet | widths | heights | opening width | opening height |
-//                  |   []   |    []   |      []       |       []       | cabinet object = (width, height, opening width, opening height)
-//                  ====================================================
-//Should be how many pieces and pieces would be what determines the amount of rows. 
-//Add an add single row for mistakes or a remove row to remove a row from the rows.
-// Cabinet Object -> Cabinet_object_array -> calulatePrice() -> return price total after doing the math for the square footage of the cabinets.
-
-
-let table_for_cells = TableForCells()
-
-console.log(table_for_cells)
-
-document.querySelector('.arrow-additional-hardware').addEventListener('mouseover', ()=>{
-    document.querySelector('.p-additional-work').classList.remove('hide');
-    console.log('mouseon')
+document.querySelector('.arrow-additional-hardware').addEventListener('click', (e)=>{
+    document.querySelector('.div-for-extra-hardware').classList.remove('hide');
+    document.querySelector('.arrow-right').classList.remove('hide')
+    document.querySelector('.arrow-left').classList.add('hide')
 })
-document.querySelector('.arrow-additional-hardware').addEventListener('mouseout', ()=>{
-    document.querySelector('.p-additional-work').classList.add('hide');
-    console.log('mouseoff')
+document.querySelector('.arrow-right').addEventListener('click', (e)=>{
+    document.querySelector('.div-for-extra-hardware').classList.add('hide');
+    document.querySelector('.arrow-right').classList.add('hide')
+    document.querySelector('.arrow-left').classList.remove('hide')
 })
+//End of additional hardware
