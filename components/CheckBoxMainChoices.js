@@ -1,4 +1,4 @@
-function makeCheckBox(name, value_of, id, price, unique_indentifier, totalPrice){
+function makeCheckBox(name, value_of, id, price, unique_indentifier, totalPrice, additionalWork){
     let container = document.createElement('div')
     container.classList.add('div-indiv-checkbox')
     let label = document.createElement('label');
@@ -21,16 +21,15 @@ function makeCheckBox(name, value_of, id, price, unique_indentifier, totalPrice)
 //function for checking if the checkbox is checked or not.
     checkBox.addEventListener('change', (event)=>{
         if(event.target.checked){
-            totalPrice.total += parseFloat(price);
-            console.log(`Interior Painting = ${price}`)
-            console.log(totalPrice.total)
-            updatePricingForExtraWork(totalPrice)
+            totalPrice.total += parseFloat(price.toFixed(1));
+            updatePricingForExtraWork(totalPrice);
+            additionalWork.total += price
         } else {
-            totalPrice.total -= parseFloat(price);
-            updatePricingForExtraWork(totalPrice)
+            totalPrice.total -= parseFloat(price.toFixed(1));
+            updatePricingForExtraWork(totalPrice);
+            additionalWork.total -= price
         }
     })
-
 
     return container
 }

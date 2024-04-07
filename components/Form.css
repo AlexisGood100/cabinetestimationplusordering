@@ -3,8 +3,10 @@
 }
 
 form {
-    display: flex;
-    flex-wrap: wrap;
+   display: flex;
+   flex-wrap: wrap;
+   width:100%;
+   justify-content: space-between;
 }
 
 label {
@@ -25,4 +27,14 @@ label {
 
 .selected {
     color: gold;
+}
+
+.submit-form{
+    margin-left:47%;
+    margin-top:2%;
+    border:1px solid black;
+    padding:.2rem;
+    box-shadow: 2px 2px 2px 2px black;
+    background-color: blue;
+    cursor: pointer;
 }

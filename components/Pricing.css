@@ -16,6 +16,11 @@ h1{
     border: 1px solid #555; /* Dark grey border */
 }
 
-.selected-tier{
-    background-color: #f5f5dc; /* Beige background */
+
+.selected-tier {
+    background-color: #4d87cd; /* Dark blue background */
+}
+
+.table input{
+    color:black
 }

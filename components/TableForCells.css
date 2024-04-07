@@ -71,8 +71,4 @@ table{
 .hide {
     display: none;
 }
-
-.selected {
-    color: #ffea00; /* Bright yellow text color */
-    background-color: #1f4068; /* Dark blue background */
-}
+    

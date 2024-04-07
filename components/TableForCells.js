@@ -22,6 +22,10 @@ unit_price.innerText = 'Unit Price'
 let button_continue = document.createElement('button');
 button_continue.innerText = 'Generate Form.'
 button_continue.classList.add('button-continue');
+let th_hingeOverlay_w = document.createElement('th');
+th_hingeOverlay_w.innerText = 'Width Overlay';
+let th_hingeOverlay_h = document.createElement('th');
+th_hingeOverlay_h.innerText = 'Height Overlay';
 
 
 tr1.appendChild(th_type);
@@ -31,6 +35,9 @@ tr1.appendChild(th_opening_width);
 tr1.appendChild(th_opening_height);
 div.appendChild(th_square_footage);
 div.appendChild(unit_price);
+div.appendChild(th_hingeOverlay_w)
+div.appendChild(th_hingeOverlay_h)
+
 div.appendChild(button_continue)
 tr1.appendChild(div);
 table.appendChild(tr1);

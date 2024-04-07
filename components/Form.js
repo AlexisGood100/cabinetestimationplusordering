@@ -1,5 +1,5 @@
 
-function makeForm(total, allValuesForRowsArr) {
+function makeForm(total, allValuesForRowsArr, additionalWork) {
     let divForm = document.createElement('div');
     divForm.classList.add('div-form')
     let formForm = document.createElement('form');
@@ -33,13 +33,20 @@ function makeForm(total, allValuesForRowsArr) {
     let quantityInput = document.createElement('input')
     formForm.appendChild(quantityLabel);
     formForm.appendChild(quantityInput);
+
+    let hingeOverlayLabel = document.createElement('label');
+    let hingeOverlayInput = document.createElement('input');
+    hingeOverlayLabel.innerText = 'Hinge Overlay: ';
+    formForm.appendChild(hingeOverlayLabel);
+    formForm.appendChild(hingeOverlayInput);
+
     
     let submitForm = document.createElement('submit');
     submitForm.classList.add('submit-form');
     submitForm.innerText = 'Generate Form';
     formForm.appendChild(submitForm);
 
-    submitForm.addEventListener('click', ()=>{
+    submitForm.addEventListener('click', ()=>{  //left off here need to make it so the form data transfers and display and the sheet becomes the main focus of the page
         let table = document.querySelector('.table-for-cells')
         let quantityValue = quantityInput.value;
         for(let i = 0; i<quantityValue;i++){
@@ -51,19 +58,20 @@ function makeForm(total, allValuesForRowsArr) {
 
             //change event on width
             input_width.addEventListener('change', ()=>{ 
-                total.total = 0;
-               
+                total.total = (0 + additionalWork.total);
+                if(input_openingW.value > 0 && input_width.value > 0){
+                    td_hingeOverlay_w.innerText = (input_width.value - input_openingW.value) / 2
+                }
                 let squareFootage = (input_width.value * input_height.value)/144
                 let actualValue = squareFootage * 10.5
-                allValuesForRowsArr[i] = actualValue.toFixed(1);
+                allValuesForRowsArr[i] = parseFloat(actualValue.toFixed(1));
                 
                     console.log('changing')
-                    if(input_width.value < input_openingW.value - (.5 * input_width.value)){ // feature for touching doors
-                        tr.classList.add('orange')
-                    } else {
-                        tr.classList.remove('orange')
-                    }
-    
+                    input_width.value < input_openingW.value
+                    ?  tr.classList.add('red')
+                    : tr.classList.remove('red')
+
+                 
                     input_width.value > 0 && input_height.value > 0 ? square_footage.innerText = squareFootage.toFixed(1) :
                     square_footage.innerText = 0; // square footage
                     price_indiv.innerText = 0;
@@ -77,7 +85,7 @@ function makeForm(total, allValuesForRowsArr) {
              updatePricingForExtraWork(total)
                 }) //end of  event listener for change
 
-                
+                //Dealing with the options
                 let option_door = document.createElement('option')
                 let td_type = document.createElement('td')
                 option_door.value = 'Door';
@@ -90,6 +98,10 @@ function makeForm(total, allValuesForRowsArr) {
                 option_falseF.classList.add('hide')
                 option_falseF.value = 'False Front';
                 option_falseF.innerText = 'False Front'
+                td_type.appendChild(option_door);
+                td_type.appendChild(option_drawer);
+                td_type.appendChild(option_falseF)
+                //when there is a movement over the option the other options will come out
                     option_door.addEventListener('mouseover', ()=>{
                         option_drawer.classList.remove('hide')
                     option_falseF.classList.remove('hide')
@@ -102,7 +114,8 @@ function makeForm(total, allValuesForRowsArr) {
                 option_drawer.classList.remove('hide')
             option_door.classList.remove('hide')
         })
-
+//adding selected to the correct option
+//Selecting the correct option
                 option_door.addEventListener('click', ()=>{
                     option_door.classList.add('selected')
                     option_falseF.classList.add('hide');
@@ -126,13 +139,10 @@ function makeForm(total, allValuesForRowsArr) {
                     option_falseF.classList.remove('selected');
                 })
                 
-
-
-
-
-                td_type.appendChild(option_door);
-                td_type.appendChild(option_drawer);
-                td_type.appendChild(option_falseF)
+//end of adding selected to the correct option
+//End of dealing with the options
+                
+               
                             let input_height = document.createElement('input');
                             let input_openingW = document.createElement('input');
                             let input_openingH = document.createElement('input');
@@ -146,22 +156,25 @@ function makeForm(total, allValuesForRowsArr) {
                             td_width.appendChild(input_width)
                             let td_openingH = document.createElement('td');
                             td_openingH.appendChild(input_openingH)
+                            
 
             //change event on height change
             input_height.addEventListener('change', ()=>{ 
-                total.total = 0;
+                total.total = (0 + additionalWork.total);
+                if(input_openingH.value > 0 && input_height.value > 0){
+                    td_hingeOverlay_h.innerText = (input_height.value - input_openingH.value) / 2
+                }
                     let squareFootage = (input_width.value * input_height.value)/144
                     let actualValue = squareFootage * 10.5
-                    allValuesForRowsArr[i] = actualValue.toFixed(1);
+                    allValuesForRowsArr[i] = parseFloat(actualValue.toFixed(1));
                     document.querySelector('.pricing-total').innerText = total.total.toFixed(1);
                      
-            
-                if(input_openingH.value >  input_height.value){ // feature for touching doors
-                    tr.classList.add('red')
-                } else {
-                    tr.classList.remove('red')
-                }
-
+                    //ternary for dealing with display condition
+                    input_openingH.value > input_height.value 
+                    || input_openingH.value === input_height.value  
+                    ?
+                    tr.classList.add('red') : tr.classList.remove('red');
+                console.log(input_openingH.value)
 
                 input_width.value > 0 && input_height.value > 0 ? square_footage.innerText = squareFootage.toFixed(1) :
                 square_footage.innerText = 0; // square footage
@@ -170,8 +183,9 @@ function makeForm(total, allValuesForRowsArr) {
                 squareFootage > 0 ? price_indiv.innerText =  actualValue.toFixed(1) : price_indiv.innerText = 100; //price of actual cabinet
                 
                 allValuesForRowsArr.forEach(element => {
-                    total.total += element;
+                    total.total += parseFloat(element);
                     console.log(total.total)
+                    console.log(allValuesForRowsArr)
                 });    
                 // document.querySelector('.pricing-total').innerText = total.total;
                 updatePricingForExtraWork(total)
@@ -185,12 +199,22 @@ function makeForm(total, allValuesForRowsArr) {
             tr.appendChild(td_height)
             tr.appendChild(td_openingW)
             tr.appendChild(td_openingH)
+
             tr.appendChild(square_footage);
-            tr.appendChild(price_indiv)
+            tr.appendChild(price_indiv);
+            let td_hingeOverlay_w = document.createElement('td')
+            td_hingeOverlay_w.innerText = 0;
+            tr.appendChild(td_hingeOverlay_w);
+            let td_hingeOverlay_h = document.createElement('td')
+            td_hingeOverlay_h.innerText = 0;
+            tr.appendChild(td_hingeOverlay_h);
+
             table.appendChild(tr)
             console.log(tr);
         }
     })
+
+  
 
     divForm.appendChild(formForm);
     return divForm;
