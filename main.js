@@ -31,6 +31,11 @@ let tableForCells = TableForCells();
 divForTableCells.appendChild(tableForCells);
 body.appendChild(divForTableCells);
 
+let divForAdditionalHardware = makeReusableGenericDiv('div-additional-hardware');
+
+
+
+
 
 
 
@@ -62,4 +67,11 @@ let table_for_cells = TableForCells()
 
 console.log(table_for_cells)
 
-
+document.querySelector('.arrow-additional-hardware').addEventListener('mouseover', ()=>{
+    document.querySelector('.p-additional-work').classList.remove('hide');
+    console.log('mouseon')
+})
+document.querySelector('.arrow-additional-hardware').addEventListener('mouseout', ()=>{
+    document.querySelector('.p-additional-work').classList.add('hide');
+    console.log('mouseoff')
+})

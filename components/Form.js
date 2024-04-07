@@ -1,4 +1,6 @@
-
+const getOverlay = (inputOne, inputTwo) =>{
+    return (inputOne.value - inputTwo.value) / 2;
+}
 function makeForm(total, allValuesForRowsArr, additionalWork) {
     let divForm = document.createElement('div');
     divForm.classList.add('div-form')
@@ -59,17 +61,19 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
             //change event on width
             input_width.addEventListener('change', ()=>{ 
                 total.total = (0 + additionalWork.total);
-                if(input_openingW.value > 0 && input_width.value > 0){
-                    td_hingeOverlay_w.innerText = (input_width.value - input_openingW.value) / 2
-                }
+                //condition for the overlay activating
+                input_openingW.value > 0 && input_width.value > 0 
+                ? td_hingeOverlay_w.innerText = (input_width.value - input_openingW.value) / 2
+                 : 0
+             //end of condition for the overlay activating
                 let squareFootage = (input_width.value * input_height.value)/144
                 let actualValue = squareFootage * 10.5
                 allValuesForRowsArr[i] = parseFloat(actualValue.toFixed(1));
                 
                     console.log('changing')
                     input_width.value < input_openingW.value
-                    ?  tr.classList.add('red')
-                    : tr.classList.remove('red')
+                    ?  alert('Actual Width and Opening Width cannot be the same size.')
+                    : null;
 
                  
                     input_width.value > 0 && input_height.value > 0 ? square_footage.innerText = squareFootage.toFixed(1) :
@@ -161,9 +165,11 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
             //change event on height change
             input_height.addEventListener('change', ()=>{ 
                 total.total = (0 + additionalWork.total);
-                if(input_openingH.value > 0 && input_height.value > 0){
-                    td_hingeOverlay_h.innerText = (input_height.value - input_openingH.value) / 2
-                }
+                 //condition for the overlay activating
+                 input_openingH.value > 0 && input_height.value > 0 
+                 ? td_hingeOverlay_w.innerText = (input_height.value - input_openingH.value) / 2
+                  : 0
+              //end of condition for the overlay activating
                     let squareFootage = (input_width.value * input_height.value)/144
                     let actualValue = squareFootage * 10.5
                     allValuesForRowsArr[i] = parseFloat(actualValue.toFixed(1));
