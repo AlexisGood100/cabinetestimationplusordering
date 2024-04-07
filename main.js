@@ -41,7 +41,7 @@ body.appendChild(divForTableCells);
 //End of div for table cells
 
 //Additional hardware
-let divForAdditionalHardware = makeReusableGenericDiv('div-additional-hardware');
+
 document.querySelector('.arrow-additional-hardware').addEventListener('click', (e)=>{
     document.querySelector('.div-for-extra-hardware').classList.remove('hide');
     document.querySelector('.arrow-right').classList.remove('hide')

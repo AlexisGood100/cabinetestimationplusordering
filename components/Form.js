@@ -50,7 +50,26 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
     submitForm.addEventListener('click', ()=>{  //left off here need to make it so the form data transfers and display and the sheet becomes the main focus of the page
         let table = document.querySelector('.table-for-cells')
+        let body = document.querySelector('body')
+        let newWorkOrder = createWorkOrder(inputPropertyName, inputUnitNumber, inputColor, dateInput, quantityInput, hingeOverlayInput)
+        console.log(newWorkOrder)
+
         let quantityValue = quantityInput.value;
+        divForm.classList.add('hide')
+        updateHingeAndScrewQuantity(document.querySelectorAll('.div-for-extra-hardware div label')[0],
+         document.querySelectorAll('.div-for-extra-hardware div label')[1],
+          document.querySelectorAll('.div-for-extra-hardware div label')[2],
+          quantityInput.value,
+          document.querySelectorAll('.div-for-extra-hardware div p')[3]
+
+        )
+        updateHingeAndScrewPrice(document.querySelectorAll('.div-for-extra-hardware div p')[0],
+         document.querySelectorAll('.div-for-extra-hardware div p')[1],
+          document.querySelectorAll('.div-for-extra-hardware div p')[2],
+          quantityInput.value,
+          document.querySelectorAll('.div-for-extra-hardware div p')[3]
+        )
+        console.log(quantityInput.value)
         for(let i = 0; i<quantityValue;i++){
             
             let tr = document.createElement('tr');
@@ -169,6 +188,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
                  input_openingH.value > 0 && input_height.value > 0 
                  ? td_hingeOverlay_w.innerText = (input_height.value - input_openingH.value) / 2
                   : 0
+        
               //end of condition for the overlay activating
                     let squareFootage = (input_width.value * input_height.value)/144
                     let actualValue = squareFootage * 10.5
@@ -217,6 +237,10 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
             table.appendChild(tr)
             console.log(tr);
+//work order
+let workOrderDisplay = createWorkOrderDisplay(newWorkOrder);
+body.appendChild(workOrderDisplay);
+          
         }
     })
 
