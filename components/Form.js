@@ -67,7 +67,8 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
          document.querySelectorAll('.div-for-extra-hardware div p')[1],
           document.querySelectorAll('.div-for-extra-hardware div p')[2],
           quantityInput.value,
-          document.querySelectorAll('.div-for-extra-hardware div p')[3]
+          document.querySelectorAll('.div-for-extra-hardware div p')[3],
+          hardwareCosts
         )
         console.log(quantityInput.value)
         for(let i = 0; i<quantityValue;i++){
@@ -79,7 +80,8 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
             //change event on width
             input_width.addEventListener('change', ()=>{ 
-                total.total = (0 + additionalWork.total);
+                total.total = (0 + additionalWork.total + hardwareCosts.total);
+                document.querySelectorAll('.pricing-table td')[4].innerText = total.total;
                 //condition for the overlay activating
                 input_openingW.value > 0 && input_width.value > 0 
                 ? td_hingeOverlay_w.innerText = (input_width.value - input_openingW.value) / 2
@@ -183,12 +185,11 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
             //change event on height change
             input_height.addEventListener('change', ()=>{ 
-                total.total = (0 + additionalWork.total);
+                total.total = (0 + additionalWork.total + hardwareCosts.total);
                  //condition for the overlay activating
                  input_openingH.value > 0 && input_height.value > 0 
-                 ? td_hingeOverlay_w.innerText = (input_height.value - input_openingH.value) / 2
+                 ? td_hingeOverlay_h.innerText = (input_height.value - input_openingH.value) / 2
                   : 0
-        
               //end of condition for the overlay activating
                     let squareFootage = (input_width.value * input_height.value)/144
                     let actualValue = squareFootage * 10.5

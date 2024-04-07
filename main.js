@@ -2,6 +2,7 @@
 const body = document.querySelector('body')
 //returning the html from components
 let additionalWork = {total:0}
+let hardwareCosts = {total:0}
 
 let html_Header = makeHeader();
 let totalPrice = {total:0};
