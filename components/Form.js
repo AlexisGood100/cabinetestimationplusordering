@@ -55,6 +55,10 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
     submitForm.addEventListener('click', ()=>{  //left off here need to make it so the form data transfers and display and the sheet becomes the main focus of the page
         let table = document.querySelector('.table-for-cells')
+        // if(!inputPropertyName.value || !inputUnitNumber.value || !inputColor.value || !inputColor.value || !dateInput.value || !quantityInput.value || !hingeOverlayInput.value){
+        //     alert('Please fill out all sections of the form.');
+        //     return;
+        // } //turn on when done testing otherwise it'll take forever
         let newWorkOrder = createWorkOrder(inputPropertyName, inputUnitNumber, inputColor, dateInput, quantityInput, hingeOverlayInput, workOrder_)
         workOrder_ = newWorkOrder;
         hingeOverlay = hingeOverlayInput.value;
@@ -62,7 +66,6 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
         document.querySelector('.div-work-orders').appendChild(workOrderDisplay)
         let quantityValue = quantityInput.value;
         divForm.classList.add('hide')
-
         globalColor = inputColor.value;
 
         updateHingeAndScrewQuantity(document.querySelectorAll('.div-for-extra-hardware div label')[0],
@@ -166,6 +169,12 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 //adding selected to the correct option
 //Selecting the correct option
                 option_door.addEventListener('click', ()=>{
+                    if(td_type.classList.contains('option-for-FF')){
+                        numOfFF -= 1;
+                    }
+                    if(td_type.classList.contains('option-for-drawer')){
+                        numOfDrawer -= 1;
+                    }
                     option_door.classList.add('selected')
                     option_falseF.classList.add('hide');
                     option_drawer.classList.add('hide');
@@ -173,6 +182,12 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
                     option_drawer.classList.remove('selected');
                 })
                 option_falseF.addEventListener('click', ()=>{
+                    if(td_type.classList.contains('option-for-door')){
+                        numOfFF -= 1;
+                    }
+                    if(td_type.classList.contains('option-for-drawer')){
+                        numOfDrawer -= 1;
+                    }
                     option_falseF.classList.add('selected')
                     option_door.classList.add('hide');
                     option_drawer.classList.add('hide');
@@ -181,6 +196,12 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
                 })
                 option_drawer.addEventListener('click', ()=>{
+                    if(td_type.classList.contains('option-for-FF')){
+                        numOfFF -= 1;
+                    }
+                    if(td_type.classList.contains('option-for-door')){
+                        numOfDrawer -= 1;
+                    }
                     option_drawer.classList.add('selected')
                     option_falseF.classList.add('hide');
                     option_door.classList.add('hide');

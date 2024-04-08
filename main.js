@@ -114,10 +114,7 @@ document.querySelector('.generatePDF').addEventListener('click', async function(
         size: 12,
     });
     console.log(service_Completed)
-
     page.drawText("Scope of Work", { x: 325, y: 650, size: 16 });
-
-
 //scope of work and extra work
     let workOrderWorkScope = scopeOfWork(IP, WBP, TK)
     const scopeOfWorkPDF = 
