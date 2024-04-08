@@ -52,17 +52,19 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
         let table = document.querySelector('.table-for-cells')
         let newWorkOrder = createWorkOrder(inputPropertyName, inputUnitNumber, inputColor, dateInput, quantityInput, hingeOverlayInput, workOrder_)
         workOrder_ = newWorkOrder;
+        hingeOverlay = hingeOverlayInput.value;
         let workOrderDisplay = createWorkOrderDisplay(newWorkOrder);
         document.querySelector('.div-work-orders').appendChild(workOrderDisplay)
         let quantityValue = quantityInput.value;
         divForm.classList.add('hide')
+
         updateHingeAndScrewQuantity(document.querySelectorAll('.div-for-extra-hardware div label')[0],
          document.querySelectorAll('.div-for-extra-hardware div label')[1],
           document.querySelectorAll('.div-for-extra-hardware div label')[2],
           quantityInput.value,
           document.querySelectorAll('.div-for-extra-hardware div p')[3]
-
         )
+
         updateHingeAndScrewPrice(document.querySelectorAll('.div-for-extra-hardware div p')[0],
          document.querySelectorAll('.div-for-extra-hardware div p')[1],
           document.querySelectorAll('.div-for-extra-hardware div p')[2],
@@ -70,6 +72,13 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
           document.querySelectorAll('.div-for-extra-hardware div p')[3],
           hardwareCosts
         )
+
+        numOfHinges = quantityInput.value * 2
+        numOfPulls = quantityInput.value * 1
+        numOfScrews = quantityInput.value * 2
+        numOfPieces = quantityInput.value;
+
+        
         console.log(quantityInput.value)
         for(let i = 0; i<quantityValue;i++){
             
@@ -112,20 +121,27 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
                 //Dealing with the options
                 let option_door = document.createElement('option')
+                option_door.classList.add('option-for-cabinet')
+                option_door.classList.add('option-for-door')
                 let td_type = document.createElement('td')
                 option_door.value = 'Door';
                 option_door.innerText = 'Door';
                 let option_drawer = document.createElement('option');
+                option_drawer.classList.add('option-for-cabinet')
+                option_drawer.classList.add('option-for-drawer')
                 option_drawer.classList.add('hide')
                 option_drawer.value = 'Drawer';
                 option_drawer.innerText = 'Drawer';
                 let option_falseF = document.createElement('option');
+                option_falseF.classList.add('option-for-FF')
                 option_falseF.classList.add('hide')
+                option_falseF.classList.add('option-for-cabinet')
                 option_falseF.value = 'False Front';
                 option_falseF.innerText = 'False Front'
                 td_type.appendChild(option_door);
                 td_type.appendChild(option_drawer);
                 td_type.appendChild(option_falseF)
+
                 //when there is a movement over the option the other options will come out
                     option_door.addEventListener('mouseover', ()=>{
                         option_drawer.classList.remove('hide')
@@ -147,6 +163,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
                     option_drawer.classList.add('hide');
                     option_falseF.classList.remove('selected');
                     option_drawer.classList.remove('selected');
+                    numOfFF = 0;
                 })
                 option_falseF.addEventListener('click', ()=>{
                     option_falseF.classList.add('selected')
@@ -239,12 +256,12 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
             table.appendChild(tr)
             console.log(tr);
 
-
-          
+            
         }
     })
+   
 
-  
+ 
 
     divForm.appendChild(formForm);
     return divForm;

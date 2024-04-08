@@ -46,7 +46,15 @@ body.appendChild(divForTableCells);
 let TK = false;
 let IP = false;
 let WBP = false;
-
+let numOfScrews = 0;
+let numOfPulls = 0;
+let numOfHinges = 0;
+let hingeType = null;
+let numOfPieces = 0;
+let numOfFF = 0;
+let numOfDoor = 0;
+let numOfDrawer = 0;
+let hingeOverlay = 0;
 //Additional hardware
 
 document.querySelector('.arrow-additional-hardware').addEventListener('click', (e)=>{
@@ -64,25 +72,44 @@ let workOrder_ = null;
 //End of additional hardware
 document.querySelector('.generatePDF').addEventListener('click', async function() {
     // Assuming you have an object called 'data' with the values you want to print
-
+    console.log(document.querySelectorAll('.option-for-cabinet'))
+    document.querySelectorAll('.option-for-cabinet').forEach((option)=>{
+        if(option.classList.contains('selected') && option.classList.contains('option-for-FF')){
+            numOfFF += 1;
+        }
+        if(option.classList.contains('selected') && option.classList.contains('option-for-FF')){
+            numOfDoor += 1;
+        }
+        if(option.classList.contains('selected') && option.classList.contains('option-for-FF')){
+            numOfDrawer += 1;
+        }
+    })
+    
     const pdfDoc = await PDFLib.PDFDocument.create();
     const page = pdfDoc.addPage();
 
-    page.drawText(`${workOrder_.Num}`, { x: 175, y: 725, size: 16 });
+    page.drawText(`${workOrder_.Num}`, { x: 10, y: 725, size: 16 });
     // Create a new PDF document
 
  //Title of business
-    const companyCredentials = "RioR - Reface instead of Replace.";
+    const companyCredentials = "RioR";
     page.drawText(companyCredentials, {
+        x: 255,
+        y: 785,
+        size: 20,
+    });
+    // - Reface instead of Replace.
+    const companyName = "(Reface instead of Replace)";
+    page.drawText(companyName, {
         x: 175,
-        y: 750,
+        y: 760,
         size: 20,
     });
 
 //work order date
-    page.drawText(`Date: ${workOrder_.Date_}`, { x: 50, y: 750, size: 16 }); // The Date
+    page.drawText(`${workOrder_.Date_}`, { x: 10, y: 750, size: 16 }); // The Date
     // Add Personal Information Section
-    page.drawText("Customer Information", { x: 50, y: 700, size: 16 });
+    page.drawText("Customer Information", { x: 50, y: 650, size: 16 });
     const service_Completed = 
     `${workOrder_.PN}
      ${workOrder_.UN}
@@ -92,13 +119,12 @@ document.querySelector('.generatePDF').addEventListener('click', async function(
 //Services that are being completed.
     page.drawText(service_Completed, {
         x: 75,
-        y: 675,
+        y: 600,
         size: 12,
     });
     console.log(service_Completed)
 
-
-    page.drawText("Scope of Work", { x: 275, y: 700, size: 16 });
+    page.drawText("Scope of Work", { x: 325, y: 650, size: 16 });
 
    const scopeOfWork = (IP, WBP, TK) => {
     let cabinetScopeOBJ = {
@@ -119,9 +145,45 @@ document.querySelector('.generatePDF').addEventListener('click', async function(
     ${workOrderWorkScope.wallBottomPainting}
     ${workOrderWorkScope.ToeKick}
     `
-    page.drawText(scopeOfWorkPDF, { x: 275, y: 715, size: 12 });
+    page.drawText(scopeOfWorkPDF, { x: 325, y: 635, size: 12 });
     //end of scope of work
+//experiment
+const jpgImageBytes = await fetch('jsDragon.jpg').then((res) => res.arrayBuffer());
+ // Embed the PNG image into the PDF document
+ const jpgImage = await pdfDoc.embedJpg(jpgImageBytes);
 
+ // Get the width and height of the PNG image
+ const { width, height } = jpgImage.scale(1);
+
+ // Draw the embedded image onto the PDF page
+ page.drawImage(jpgImage, {
+     x: 0, // X coordinate of the top-left corner of the image
+     y: 770, // Y coordinate of the top-left corner of the image
+     width: width * 0.5, // Scale the width of the image
+     height: height * 0.5, // Scale the height of the image
+ });
+
+ //Specifics
+ const workSpecifics = 
+ `
+ Refacing Details
+ Hinge Overlay: ${hingeOverlay}
+ Color: ${workOrder_.color}
+ ${workOrder_.Quan} - $${numOfPieces * 40}
+ # of False Fronts:${numOfFF}
+ # of Doors: ${numOfDoor}
+ # of Drawers: ${numOfDrawer}
+ # of Screws: ${numOfScrews} - $${(numOfScrews * .50).toFixed(2)}
+ # of Hinges: ${numOfHinges} - $${(numOfHinges * 1.14).toFixed(2)}
+ # of Pulls: ${numOfPulls} - $${(numOfPulls * 1.69).toFixed(2)}
+ Total: ${totalPrice.total}
+ `
+ page.drawText(workSpecifics, { x: 25, y: 500, size: 12 });
+//end of work specifics
+
+
+
+//end of experiment
 
     // Add Additional Sections as needed
     // page.drawText("Section Content", { x: 50, y: 600, size: 12 });
