@@ -20,12 +20,15 @@ let unit_price = document.createElement('th');
 unit_price.classList.add('unit-price-th')
 unit_price.innerText = 'Unit Price'
 let button_continue = document.createElement('button');
+button_continue.classList.add('generatePDF')
 button_continue.innerText = 'Generate Form.'
 button_continue.classList.add('button-continue');
 let th_hingeOverlay_w = document.createElement('th');
 th_hingeOverlay_w.innerText = 'Width Overlay';
 let th_hingeOverlay_h = document.createElement('th');
 th_hingeOverlay_h.innerText = 'Height Overlay';
+
+
 
 
 tr1.appendChild(th_type);

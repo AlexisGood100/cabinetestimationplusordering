@@ -50,8 +50,8 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
     submitForm.addEventListener('click', ()=>{  //left off here need to make it so the form data transfers and display and the sheet becomes the main focus of the page
         let table = document.querySelector('.table-for-cells')
-        let newWorkOrder = createWorkOrder(inputPropertyName, inputUnitNumber, inputColor, dateInput, quantityInput, hingeOverlayInput)
-        console.log(newWorkOrder)
+        let newWorkOrder = createWorkOrder(inputPropertyName, inputUnitNumber, inputColor, dateInput, quantityInput, hingeOverlayInput, workOrder_)
+        workOrder_ = newWorkOrder;
         let workOrderDisplay = createWorkOrderDisplay(newWorkOrder);
         document.querySelector('.div-work-orders').appendChild(workOrderDisplay)
         let quantityValue = quantityInput.value;

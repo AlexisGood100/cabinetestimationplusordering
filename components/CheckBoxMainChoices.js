@@ -23,11 +23,30 @@ function makeCheckBox(name, value_of, id, price, unique_indentifier, totalPrice,
         if(event.target.checked){
             totalPrice.total += parseFloat(price.toFixed(1));
             updatePricingForExtraWork(totalPrice);
+          
             additionalWork.total += price
+           if(price == 300){
+            IP = true;
+        }
+        else if(price === 150){
+           WBP = true
+        }
+        else if(price === 50){
+            TK = true;
+        }
         } else {
             totalPrice.total -= parseFloat(price.toFixed(1));
             updatePricingForExtraWork(totalPrice);
             additionalWork.total -= price
+            if(price == 300){
+                IP = false;
+            }
+            else if(price === 150){
+               WBP = false;
+            }
+            else if(price === 50){
+                TK = false;
+            }
         }
     })
 
