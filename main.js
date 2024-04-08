@@ -61,87 +61,20 @@ let hingeOverlay = 0;
 //Additional hardware
 let allWidths = [];
 let allHeights = [];
-document.querySelector('.arrow-additional-hardware').addEventListener('click', (e)=>{
-    document.querySelector('.div-for-extra-hardware').classList.remove('hide');
-    document.querySelector('.arrow-right').classList.remove('hide')
-    document.querySelector('.arrow-left').classList.add('hide')
-})
-document.querySelector('.arrow-right').addEventListener('click', (e)=>{
-    document.querySelector('.div-for-extra-hardware').classList.add('hide');
-    document.querySelector('.arrow-right').classList.add('hide')
-    document.querySelector('.arrow-left').classList.remove('hide')
-})
-
-
-    function createabinetObject(array_, width, height, color) {
-        let cabinet = {type_of_cabinet:null,
-             Width: width,
-              Height: height,
-              Color: color
-            }
-            array_.push(cabinet)  
-}
-
-
 let workOrder_ = null;
 //End of additional hardware
 document.querySelector('.generatePDF').addEventListener('click', async function() {
     // Assuming you have an object called 'data' with the values you want to print
-    console.log(document.querySelectorAll('.option-for-cabinet'))
-    document.querySelectorAll('.option-for-cabinet').forEach((option)=>{
-        if(option.classList.contains('selected') && option.classList.contains('option-for-FF')){
-            numOfFF += 1;
-            arrayOfTypes.appendChild('FalseF')
-        }
-        if(option.classList.contains('selected') && option.classList.contains('option-for-FF')){
-            numOfDoor += 1;
-            arrayOfTypes.appendChild('Door')
-        }
-        if(option.classList.contains('selected') && option.classList.contains('option-for-FF')){
-            numOfDrawer += 1;
-            arrayOfTypes.appendChild('Drawer')
-        }
-    })
 
-        let allWidths_ = (allWidths)=>{
-            let allWidthsDisplay = document.querySelectorAll('.input-width');
-            console.log(allWidths)
-           allWidthsDisplay.forEach((width)=>{
-                allWidths.push(width.value)
-            })
-            
-        }
+
+    //getting all heights and all widths of cabinets and putting them into arrays   
+        CollectTypeOfCabinetAll(arrayOfTypes)
         allWidths_(allWidths)
-
-    let allHeights_ = (allHeights)=>{
-        let allHeightsDisplay = document.querySelectorAll('.input-height');
-        console.log(allHeights)
-       allHeightsDisplay.forEach((height)=>{
-            allHeights.push(height.value)
-        })
-       
-    }
-    allHeights_(allHeights)
+        allHeights_(allHeights)
+        makeCabinetObject(allHeights, allWidths, cabinetArray, globalColor)
+//end of width and height of cabinets (cabinet objects all)
 
 
-    let makeCabinetObject = (allHeights, allWidths, cabinetArray, globalColor)=>{
-        let i = 0;
-        allHeights.forEach((_)=>{
-            let currentHeight = allHeights[i]
-            let currentWidth = allWidths[i]
-            let cabinetObject = {
-                Width: currentWidth,
-                Height:currentHeight,
-                Color:globalColor
-            }
-            cabinetArray.push(cabinetObject);
-            i+=1;
-        })
-        console.log(cabinetArray);
-    }
-
-    makeCabinetObject(allHeights, allWidths, cabinetArray, globalColor)
-    
     
     const pdfDoc = await PDFLib.PDFDocument.create();
     const page = pdfDoc.addPage();
@@ -183,16 +116,6 @@ document.querySelector('.generatePDF').addEventListener('click', async function(
     console.log(service_Completed)
 
     page.drawText("Scope of Work", { x: 325, y: 650, size: 16 });
-
-   const scopeOfWork = (IP, WBP, TK) => {
-    let cabinetScopeOBJ = {
-        cabinetRefacing : 'Refacing of Cabinets',
-        interiorPainting: `Interior Painting: ${IP}`,
-        wallBottomPainting: `Wall Bottom Painting: ${WBP}`,
-        ToeKick: `Toe-Kick: ${TK}`,
-    }
-    return cabinetScopeOBJ;
-    }
 
 
 //scope of work and extra work
