@@ -1,3 +1,8 @@
+
+
+
+
+
 const getOverlay = (inputOne, inputTwo) =>{
     return (inputOne.value - inputTwo.value) / 2;
 }
@@ -58,6 +63,8 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
         let quantityValue = quantityInput.value;
         divForm.classList.add('hide')
 
+        globalColor = inputColor.value;
+
         updateHingeAndScrewQuantity(document.querySelectorAll('.div-for-extra-hardware div label')[0],
          document.querySelectorAll('.div-for-extra-hardware div label')[1],
           document.querySelectorAll('.div-for-extra-hardware div label')[2],
@@ -85,6 +92,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
             let tr = document.createElement('tr');
             tr.classList.add('tr-for-cell-rows')
             let input_width = document.createElement('input');
+            input_width.classList.add('input-width')
            
 
             //change event on width
@@ -163,7 +171,6 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
                     option_drawer.classList.add('hide');
                     option_falseF.classList.remove('selected');
                     option_drawer.classList.remove('selected');
-                    numOfFF = 0;
                 })
                 option_falseF.addEventListener('click', ()=>{
                     option_falseF.classList.add('selected')
@@ -186,6 +193,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
                 
                
                             let input_height = document.createElement('input');
+                            input_height.classList.add('input-height')
                             let input_openingW = document.createElement('input');
                             let input_openingH = document.createElement('input');
                             let square_footage = document.createElement('p');

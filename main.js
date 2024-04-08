@@ -7,6 +7,8 @@ let hardwareCosts = {total:0}
 let html_Header = makeHeader();
 let totalPrice = {total:0};
 let allValuesForRowsArr = [];
+let cabinetArray = [];
+let arrayOfTypes = [];
 let form = makeForm(totalPrice, allValuesForRowsArr, additionalWork);
 let newMainForChoices = makeMainChoices();
 let pricingSection = PricingArea();
@@ -50,13 +52,15 @@ let numOfScrews = 0;
 let numOfPulls = 0;
 let numOfHinges = 0;
 let hingeType = null;
+let globalColor = null;
 let numOfPieces = 0;
 let numOfFF = 0;
 let numOfDoor = 0;
 let numOfDrawer = 0;
 let hingeOverlay = 0;
 //Additional hardware
-
+let allWidths = [];
+let allHeights = [];
 document.querySelector('.arrow-additional-hardware').addEventListener('click', (e)=>{
     document.querySelector('.div-for-extra-hardware').classList.remove('hide');
     document.querySelector('.arrow-right').classList.remove('hide')
@@ -68,6 +72,17 @@ document.querySelector('.arrow-right').addEventListener('click', (e)=>{
     document.querySelector('.arrow-left').classList.remove('hide')
 })
 
+
+    function createabinetObject(array_, width, height, color) {
+        let cabinet = {type_of_cabinet:null,
+             Width: width,
+              Height: height,
+              Color: color
+            }
+            array_.push(cabinet)  
+}
+
+
 let workOrder_ = null;
 //End of additional hardware
 document.querySelector('.generatePDF').addEventListener('click', async function() {
@@ -76,14 +91,57 @@ document.querySelector('.generatePDF').addEventListener('click', async function(
     document.querySelectorAll('.option-for-cabinet').forEach((option)=>{
         if(option.classList.contains('selected') && option.classList.contains('option-for-FF')){
             numOfFF += 1;
+            arrayOfTypes.appendChild('FalseF')
         }
         if(option.classList.contains('selected') && option.classList.contains('option-for-FF')){
             numOfDoor += 1;
+            arrayOfTypes.appendChild('Door')
         }
         if(option.classList.contains('selected') && option.classList.contains('option-for-FF')){
             numOfDrawer += 1;
+            arrayOfTypes.appendChild('Drawer')
         }
     })
+
+        let allWidths_ = (allWidths)=>{
+            let allWidthsDisplay = document.querySelectorAll('.input-width');
+            console.log(allWidths)
+           allWidthsDisplay.forEach((width)=>{
+                allWidths.push(width.value)
+            })
+            
+        }
+        allWidths_(allWidths)
+
+    let allHeights_ = (allHeights)=>{
+        let allHeightsDisplay = document.querySelectorAll('.input-height');
+        console.log(allHeights)
+       allHeightsDisplay.forEach((height)=>{
+            allHeights.push(height.value)
+        })
+       
+    }
+    allHeights_(allHeights)
+
+
+    let makeCabinetObject = (allHeights, allWidths, cabinetArray, globalColor)=>{
+        let i = 0;
+        allHeights.forEach((_)=>{
+            let currentHeight = allHeights[i]
+            let currentWidth = allWidths[i]
+            let cabinetObject = {
+                Width: currentWidth,
+                Height:currentHeight,
+                Color:globalColor
+            }
+            cabinetArray.push(cabinetObject);
+            i+=1;
+        })
+        console.log(cabinetArray);
+    }
+
+    makeCabinetObject(allHeights, allWidths, cabinetArray, globalColor)
+    
     
     const pdfDoc = await PDFLib.PDFDocument.create();
     const page = pdfDoc.addPage();
@@ -197,4 +255,22 @@ const jpgImageBytes = await fetch('jsDragon.jpg').then((res) => res.arrayBuffer(
     link.href = window.URL.createObjectURL(pdfBlob);
     link.download = 'generated.pdf';
     link.click();
+    //End of PDF part
+
+
+    // ---------------------------------------------------
+    //Start of Excel sheet part
+
+
+    // Convert data to worksheet
+    var worksheet = XLSX.utils.json_to_sheet(cabinetArray);
+
+    // Create workbook
+    var workbook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+
+    // Save workbook to file
+    XLSX.writeFile(workbook, 'output.xlsx');
 });
+
+
