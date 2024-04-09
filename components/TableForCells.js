@@ -27,8 +27,13 @@ let th_hingeOverlay_w = document.createElement('th');
 th_hingeOverlay_w.innerText = 'Width Overlay';
 let th_hingeOverlay_h = document.createElement('th');
 th_hingeOverlay_h.innerText = 'Height Overlay';
+let button_do_math = document.createElement('button');
+button_do_math.innerText = 'Auto Conversion';
 
-
+button_do_math.addEventListener('click', ()=>{
+    conversionOfWidths(document.querySelectorAll('.input-width'), document.querySelectorAll('.input-opening-width'))
+    conversionOfHeights(document.querySelectorAll('.input-height'), document.querySelectorAll('.input-opening-height'))
+})
 
 
 tr1.appendChild(th_type);
@@ -42,6 +47,7 @@ div.appendChild(th_hingeOverlay_w)
 div.appendChild(th_hingeOverlay_h)
 
 div.appendChild(button_continue)
+div.appendChild(button_do_math)
 tr1.appendChild(div);
 table.appendChild(tr1);
 return table;
