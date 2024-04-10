@@ -62,6 +62,7 @@ let hingeOverlay = 0;
 let allWidths = [];
 let allHeights = [];
 let workOrder_ = null;
+let choosenTier = null;
 //End of additional hardware
 document.querySelector('.generatePDF').addEventListener('click', async function() {
     // Assuming you have an object called 'data' with the values you want to print

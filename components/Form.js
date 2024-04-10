@@ -1,8 +1,3 @@
-
-
-
-
-
 const getOverlay = (inputOne, inputTwo) => {
     return (inputOne.value - inputTwo.value) / 2;
 }
@@ -159,17 +154,12 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
             //event listeners for the opening width
             input_openingW.addEventListener('change', () => {
-                total.total = (0 + additionalWork.total + hardwareCosts.total);
-                document.querySelectorAll('.pricing-table td')[4].innerText = total.total;
-                //condition for the overlay activating
-                input_openingW.value > 0 && input_width.value > 0
-                    ? td_hingeOverlay_w.innerText = (input_width.value - input_openingW.value) / 2
-                    : 0
-                //end of condition for the overlay activating
-                let squareFootage = (input_width.value * input_height.value) / 144
-                let actualValue = squareFootage * 10.5
-                allValuesForRowsArr[i] = parseFloat(actualValue.toFixed(1));
-
+            
+                input_openingW.value > input_width.value
+                || input_openingW.value === input_width.value
+                ?
+                tr.classList.add('red') : tr.classList.remove('red');
+            console.log(input_openingW.value)
              
                     input_width.value === input_openingW.value
                     ? alert('Actual Width and Opening Width cannot be the same size.')
@@ -178,20 +168,8 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
                     !input_width.value === '' && input_width < input_openingW.value
                     ? alert('Opening width cannot be greater than actual width')
                     : null;
-
-
-                input_width.value > 0 && input_height.value > 0 ? square_footage.innerText = squareFootage.toFixed(1) :
-                    square_footage.innerText = 0; // square footage
-                price_indiv.innerText = 0;
-
-                squareFootage > 0 ? price_indiv.innerText = actualValue.toFixed(1) : price_indiv.value = 100; //price of actual cabinet
-                allValuesForRowsArr.forEach(element => {
-                    total.total += element;
-                    console.log(total.total)
                 });
-                //  document.querySelector('.pricing-total').innerText = total.total;
-                updatePricingForExtraWork(total)
-            })
+              
 
 
             //end of event listeners for the opening wifth
@@ -199,17 +177,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
             //event listeners for the opening height
             //change event on height change
             input_openingH.addEventListener('change', () => {
-                total.total = (0 + additionalWork.total + hardwareCosts.total);
-                //condition for the overlay activating
-                input_openingH.value > 0 && input_height.value > 0
-                    ? td_hingeOverlay_h.innerText = (input_height.value - input_openingH.value) / 2
-                    : 0
-                //end of condition for the overlay activating
-                let squareFootage = (input_width.value * input_height.value) / 144
-                let actualValue = squareFootage * 10.5
-                allValuesForRowsArr[i] = parseFloat(actualValue.toFixed(1));
-                document.querySelector('.pricing-total').innerText = total.total.toFixed(1);
-
+        
                 //ternary for dealing with display condition
                 input_openingH.value > input_height.value
                     || input_openingH.value === input_height.value
@@ -226,19 +194,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
                     ? alert('Opening height can not be greater than actual height')
                     : null;
 
-                input_width.value > 0 && input_height.value > 0 ? square_footage.innerText = squareFootage.toFixed(1) :
-                    square_footage.innerText = 0; // square footage
-                price_indiv.innerText = 0;
 
-                squareFootage > 0 ? price_indiv.innerText = actualValue.toFixed(1) : price_indiv.innerText = 100; //price of actual cabinet
-
-                allValuesForRowsArr.forEach(element => {
-                    total.total += parseFloat(element);
-                    console.log(total.total)
-                    console.log(allValuesForRowsArr)
-                });
-                // document.querySelector('.pricing-total').innerText = total.total;
-                updatePricingForExtraWork(total)
             }) //end of width event listener for change
 
             //end of event listeners for the opening h

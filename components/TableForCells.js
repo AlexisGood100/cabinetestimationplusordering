@@ -31,20 +31,13 @@ let button_do_math = document.createElement('button');
 button_do_math.innerText = 'Auto Conversion';
 
 button_do_math.addEventListener('click', ()=>{
-    conversionOfWidths(document.querySelectorAll('.input-width'), document.querySelectorAll('.input-opening-width'))
-    conversionOfHeights(document.querySelectorAll('.input-height'), document.querySelectorAll('.input-opening-height'))
+    conversionOfMeasurements(document.querySelectorAll('.input-width'), document.querySelectorAll('.input-opening-width'), hingeOverlay)
+    conversionOfMeasurements(document.querySelectorAll('.input-height'), document.querySelectorAll('.input-opening-height'), hingeOverlay)
 })
 
+tr1.append(th_type, th_width, th_height, th_opening_width,th_opening_height);
+div.appendChild(th_square_footage, unit_price, th_hingeOverlay_w,th_hingeOverlay_h);
 
-tr1.appendChild(th_type);
-tr1.appendChild(th_width);
-tr1.appendChild(th_height);
-tr1.appendChild(th_opening_width);
-tr1.appendChild(th_opening_height);
-div.appendChild(th_square_footage);
-div.appendChild(unit_price);
-div.appendChild(th_hingeOverlay_w)
-div.appendChild(th_hingeOverlay_h)
 
 div.appendChild(button_continue)
 div.appendChild(button_do_math)
