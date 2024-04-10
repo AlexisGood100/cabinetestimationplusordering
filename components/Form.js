@@ -10,7 +10,9 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
     let labelUnitNumber = document.createElement('label');
     labelUnitNumber.innerText = 'Unit Number: '
     let inputPropertyName = document.createElement('input');
-    let inputUnitNumber = document.createElement('input');
+    inputPropertyName.type = 'text'
+    let inputUnitNumber = document.createElement('input')
+    inputUnitNumber.type = 'text'
 
     formForm.appendChild(labelPropertyName);
     formForm.appendChild(inputPropertyName);
@@ -20,12 +22,14 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
     let labelColor = document.createElement('label');
     labelColor.innerText = 'Color: '
     let inputColor = document.createElement('input');
+    inputColor.type = 'text'
 
     formForm.appendChild(labelColor);
     formForm.appendChild(inputColor);
 
     let dateLabel = document.createElement('label')
     dateLabel.innerText = 'Date: '
+    //add a date on input click
     let dateInput = document.createElement('input');
     formForm.appendChild(dateLabel);
     formForm.appendChild(dateInput);
@@ -33,12 +37,14 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
     let quantityLabel = document.createElement('label');
     quantityLabel.innerText = 'Quantity: '
     let quantityInput = document.createElement('input')
+    quantityInput.type = 'number'
     formForm.appendChild(quantityLabel);
     formForm.appendChild(quantityInput);
 
     let hingeOverlayLabel = document.createElement('label');
     let hingeOverlayInput = document.createElement('input');
-    hingeOverlayLabel.innerText = 'Hinge Overlay: ';
+    hingeOverlayInput.type = 'number'
+    hingeOverlayLabel.innerText = 'Overlay: ';
     formForm.appendChild(hingeOverlayLabel);
     formForm.appendChild(hingeOverlayInput);
 
@@ -117,6 +123,8 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
 
             //change event on width
+            input_width.type = 'number';
+            
             input_width.addEventListener('change', () => {
                 total.total = (0 + additionalWork.total + hardwareCosts.total);
                 document.querySelectorAll('.pricing-table td')[4].innerText = total.total;
@@ -153,6 +161,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
             }) //end of  event listener for change
 
             //event listeners for the opening width
+            input_openingW.type = 'number';
             input_openingW.addEventListener('change', () => {
             
                 input_openingW.value > input_width.value
@@ -174,6 +183,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
             //event listeners for the opening height
             //change event on height change
+            input_openingH.type = 'number';
             input_openingH.addEventListener('change', () => {
         
                 //ternary for dealing with display condition
@@ -195,6 +205,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
 
             //end of event listeners for the opening h
             //change event on height change
+            input_height.type = 'number';
             input_height.addEventListener('change', () => {
                 total.total = (0 + additionalWork.total + hardwareCosts.total);
                 //condition for the overlay activating
