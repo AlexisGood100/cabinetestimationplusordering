@@ -165,9 +165,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
                     ? alert('Actual Width and Opening Width cannot be the same size.')
                     : null;
 
-                    !input_width.value === '' && input_width < input_openingW.value
-                    ? alert('Opening width cannot be greater than actual width')
-                    : null;
+                  
                 });
               
 
@@ -190,9 +188,7 @@ function makeForm(total, allValuesForRowsArr, additionalWork) {
                     ? alert('Actual Height and Opening Height cannot be the same size.')
                     : null;
 
-                    !input_height.value === '' && input_height < input_openingH.value
-                    ? alert('Opening height can not be greater than actual height')
-                    : null;
+                
 
 
             }) //end of width event listener for change

@@ -72,7 +72,9 @@ document.querySelector('.generatePDF').addEventListener('click', async function(
         CollectTypeOfCabinetAll(arrayOfTypes)
         allWidths_(allWidths)
         allHeights_(allHeights)
+        console.log(allWidthsAndHeightsObj());
         makeCabinetObject(allHeights, allWidths, cabinetArray, globalColor)
+        
 //end of width and height of cabinets (cabinet objects all)
 
 
