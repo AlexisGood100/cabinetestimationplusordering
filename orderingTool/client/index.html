@@ -11,7 +11,7 @@
     <header>
         <h1>Welcome to the ordering Application</h1>
     </header>
-<!-- Create Account section (backend access =>) -->
+<!-- Create Account section (backend access => Users) -->
     <main>
 
         <h1>Please create an account to begin ordering.</h1>
@@ -34,7 +34,7 @@
         </div>
         <!-- End of account creation -->
 
-        <!-- Section login (backend access =>) -->
+        <!-- Section login (backend access => Users get confirm account) -->
 <div class="div-login-container">
 
     <form>
@@ -50,7 +50,7 @@
 
         <!-- End of login -->
 
-<!-- Setting up an account (backend access =>) (only the location is saved to backend, the images ect are frontend.) -->
+<!-- Setting up an account (backend access => locations) (only the location is saved to backend, the images ect are frontend.) -->
         <section>
             <h1>To begin ordering, you need to setup a location.</h1>
             <div class="div-location-setup">
@@ -188,7 +188,7 @@
 
 <!-- End of the pull section -->
 
-<!-- name of location -->
+<!-- name of location (backend access => locations) -->
 <div class="div-choice-location-information">
     <h1>Enter name of location</h1>
 <div class="div-choice-location-form">
@@ -200,10 +200,17 @@
 </div>
 <!-- end of location name -->
 
-<div class="choice-ready-to-order">
-    <h1>Now that you location is setup, would you like to place an order?</h1>
-    <button>Place Order</button>
+<div class="choice-save-location">
+    <h1>Click the save button to add location</h1>
+    <p>Location will be added to locations.</p>
+    <button>Save</button>
+    <div class="div-order-container">
+        <h1>Now that you location is setup, would you like to place an order?</h1>
+        <button>Place Order</button>
+    </div>
 </div>
+
+
 
 
 
