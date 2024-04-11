@@ -1,47 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <h1>Welcome to the ordering Application</h1>
     </header>
 
     <main>
-        
+
         <h1>Please create an account to begin ordering.</h1>
         <form id="form-create-account">
-            
-        <div>
-            <label>Desired Username</label>
-            <input type='text'id="User-desiredUsername">
-            <label>First Name</label>
-            <input type='text' id="User-fName">
-            <label>Last Name</label>
-            <input type='text' id="User-lName">
-            <label>Email</label>
-            <input type='text' id="User-email">
-            <label>Birth Date</label>
-            <input type='text'id="User-birthDate">
-            <submit>Create Account</submit>
+
+            <div>
+                <label>Desired Username</label>
+                <input type='text' id="User-desiredUsername">
+                <label>First Name</label>
+                <input type='text' id="User-fName">
+                <label>Last Name</label>
+                <input type='text' id="User-lName">
+                <label>Email</label>
+                <input type='text' id="User-email">
+                <label>Birth Date</label>
+                <input type='text' id="User-birthDate">
+                <submit>Create Account</submit>
         </form>
-    </div>
+        </div>
 
 
         <section>
             <h1>To begin ordering, you need to setup a location.</h1>
             <div class="div-location-setup">
                 <div class="div-choices">
+
+                    <!-- Start of style choices -->
                     <div class="div-choice-for-cabinet-style">
                         <h1>Please choose a cabinet style.</h1>
-                    </div> 
+                        <div class="div-choice-wood">
+                            <p>Wood</p>
+                            <div class="div-image">
+                                <button>Choose</button>
+                            </div>
+                        </div>
+
+                        <div class="div-choice-unique">
+                            <p>Unique</p>
+                            <div class="div-image">
+                            <button>Choose</button>
+                            </div>
+                        </div>
+
+                        <div class="div-choice-odd">
+                            <p>Odd</p>
+                            <div class="div-image">
+<button>Choose</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <!-- end of style -->
+
+
                 </div>
             </div>
         </section>
 
     </main>
 </body>
+
 </html>
