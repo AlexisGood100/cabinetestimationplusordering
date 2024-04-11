@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css"> <!-- Root CSS file-->
+    <link rel="stylesheet" href="/cabinetEstimationTool/components/Form.css"> <!--Form-->
+    <link rel="stylesheet" href="/cabinetEstimationTool/components/Main.css"> <!--Main-->
+    <link rel="stylesheet" href="/cabinetEstimationTool/components/Header.css"> <!--Header-->
+    <link rel="stylesheet" href="/cabinetEstimationTool/components/CheckBoxMainChoices.css">   <!-- CheckBoxes -->
+<link rel="stylesheet" href="/cabinetEstimationTool/components/Pricing.css">    <!-- Pricing -->
+<link rel="stylesheet" href="/cabinetEstimationTool/components/TableForCells.css"> <!-- Cells for items -->
+ <link rel="stylesheet" href="/cabinetEstimationTool/components/AdditionalHardware.css">                   <!-- Additional Hardware -->
+ <link rel="stylesheet" href="/cabinetEstimationTool/components/WorkOrder.css"> <!-- Work order -->
+
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src="/cabinetEstimationTool/components/TableForCells.js"></script>
+    <script src="/cabinetEstimationTool/components/Pricing.js"></script>
+    <script src="/cabinetEstimationTool/components/Div.js"></script>
+    <script src="/cabinetEstimationTool/components/CheckBoxMainChoices.js"></script>
+    <script src="/cabinetEstimationTool/components/Header.js"></script>
+    <script src="/cabinetEstimationTool/components/Form.js"></script>
+    <script src="/cabinetEstimationTool/components/Main.js"></script>
+    <script src="/cabinetEstimationTool/components/AdditionalHardware.js"></script>
+    <script src="/cabinetEstimationTool/components/WorkOrder.js"></script>
+    
+    <!-- Functions for updating hinge, screw, and pull price/quantity-->
+    <script src="/cabinetEstimationTool/functionsForAdditionalWork/updateHingeAndScrewPrice.js">
+    </script>
+    <script src="/cabinetEstimationTool/functionsForAdditionalWork/updateHingeAndScrewQuantity.js"></script>
+    <!-- Functions for cabinet object -->
+    <script src="/cabinetEstimationTool/functionsForCabinetObject/allHeights_.js"></script>
+    <script src="/cabinetEstimationTool/functionsForCabinetObject/allWidths_.js"></script>
+    <script src="/cabinetEstimationTool/functionsForCabinetObject/CollectTypeOfCabinetAll.js"></script>
+    <script src="/cabinetEstimationTool/functionsForCabinetObject/makeCabinetObject.js"></script>
+   
+    
+    <!-- func pricing -->
+    <div class="div-additional-hardware">
+        <p class="p-additional-work">Additional Work</p>
+    <ion-icon name="arrow-down-circle-outline" class="arrow-additional-hardware arrow-left"></ion-icon>
+    <ion-icon name="arrow-up-circle-outline" class="arrow-additional-hardware  arrow-right hide"></ion-icon>
+    </div>
+    
+<script src="/cabinetEstimationTool/functionsForPricing/updateTotals.js"></script>
+<!-- func pricing end -->
+<!-- functions for work order-->
+<script src="/cabinetEstimationTool/functionsForWorkOrder/createWorkOrder.js"></script>
+<!-- End of functions for work order -->
+<!-- Func for converting width and height -->
+<script src="/cabinetEstimationTool/functionsConversions/buttonConversionWidthHeight.js"></script>
+<!-- End of func for converting width and height -->
+<!-- Pdf funcs -->
+<script src="/cabinetEstimationTool/pdfFuncs/scopeOfWorkText.js"></script>
+<!-- End of Pdf Funcs -->
+
+    <!-- End of function -->
+
+    <!-- Event listeners external -->
+<script src="/cabinetEstimationTool/externalEventListeners/arrows.js"></script>
+    <!-- End of Event listeners external -->
+
+    <script src="main.js"></script> 
+    
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.16.0/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
+</body>
+</html>
