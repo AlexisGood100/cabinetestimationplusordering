@@ -73,3 +73,45 @@
     };
 
 });
+
+
+let accountSubmissionObj = {
+    cabinetType : null,
+    cabinetColor: null
+}
+
+
+let cabinetType = null;
+// buttons for choosing the style of cabinet.
+document.querySelectorAll('.div-choice-cabinet')[0].addEventListener('click', ()=>{
+accountSubmissionObj.cabinetType = 'Wood';
+});
+document.querySelectorAll('.div-choice-cabinet')[1].addEventListener('click', ()=>{
+    accountSubmissionObj.cabinetType = 'Unique';
+});
+document.querySelectorAll('.div-choice-cabinet')[2].addEventListener('click', ()=>{
+    accountSubmissionObj.cabinetType = 'Odd';
+});
+//end of style
+// Violet Teal, Crimson Black Silver, Burnt Orange, Green Orange Pink, Bright Aqua
+//buttons for choosing the color of cabinets
+document.querySelectorAll('.div-choice-color')[0].addEventListener('click', ()=>{
+    accountSubmissionObj.cabinetColor = document.querySelectorAll('.div-choice-color p')[0].innerText;
+    });
+    document.querySelectorAll('.div-choice-color')[1].addEventListener('click', ()=>{
+         accountSubmissionObj.cabinetColor = document.querySelectorAll('.div-choice-color p')[1].innerText 
+    });
+    document.querySelectorAll('.div-choice-color')[2].addEventListener('click', ()=>{
+ accountSubmissionObj.cabinetColor = document.querySelectorAll('.div-choice-color p')[2].innerText
+    });
+    document.querySelectorAll('.div-choice-color')[3].addEventListener('click', ()=>{
+         accountSubmissionObj.cabinetColor = document.querySelectorAll('.div-choice-color p')[3].innerText
+    });
+    document.querySelectorAll('.div-choice-color')[4].addEventListener('click', ()=>{
+        accountSubmissionObj.cabinetColor = document.querySelectorAll('.div-choice-color p')[4].innerText
+    });
+//end of color
+
+//radio buttons for the hinges
+
+//end of hinges

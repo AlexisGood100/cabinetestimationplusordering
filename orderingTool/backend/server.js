@@ -75,8 +75,7 @@ function verifyToken(req, res, next) {
         req.userId = decoded.userId; // Pass the decoded token's userId to the request object
         next();
     });
-}
-
+};
 // Protected route example
 app.get('/protected', verifyToken, (req, res) => {
     res.json({ message: 'Protected route accessed successfully', userId: req.userId });
