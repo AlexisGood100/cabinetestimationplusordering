@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <!-- <script src="app.js"></script> -->
 </head>
-
 <body>
     <header>
         <h1>Welcome to the ordering Application</h1>
@@ -28,26 +28,26 @@
                 <input type='text' id="User-email">
                 <label>Birth Date</label>
                 <input type='text' id="User-birthDate">
-                <submit>Create Account</submit>
+                <label>Password</label>
+                <input type='text' id="User-password">
+                <button type="submit" class="submit-user-data">Create Account</button>
         </form>
         
         </div>
         <!-- End of account creation -->
 
         <!-- Section login (backend access => Users get confirm account) -->
-<div class="div-login-container">
-
-    <form>
-        <label>Username</label>
-        <input>
-        <label>Password</label>
-        <input>
-        <submit>Login</submit>
-    </form>
-
-
-</div>
-
+        <div class="div-login-container">
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+        
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+        
+                <button type="submit">Login</button>
+            </form>
+        </div>
         <!-- End of login -->
 
 <!-- Setting up an account (backend access => locations) (only the location is saved to backend, the images ect are frontend.) -->
@@ -232,6 +232,9 @@
 
 
     </main>
+    <script src="app.js">
+     
+        </script>
 </body>
 
 </html>
