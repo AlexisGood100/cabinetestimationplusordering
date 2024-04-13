@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
     <!-- <script src="app.js"></script> -->
 </head>
 <body>
@@ -129,14 +130,14 @@
 <div class="div-choice-hinge-overlay">
     <h1>Choose the hinge size that you will be using</h1>
     <form>
-        <input type="radio" id="option1" name="group1" value="Option 1">
-        <label for="option1">Option 1</label><br>
-        <input type="radio" id="option2" name="group1" value="Option 2">
-        <label for="option2">Option 2</label><br>
-        <input type="radio" id="option3" name="group1" value="Option 3">
-        <label for="option2">Option 3</label><br>
-        <input type="radio" id="option4" name="group1" value="Option 4">
-        <label for="option2">Option 4</label><br>
+        <input type="radio" class="radio-choice-hinge" id="option1" name="group1" value="Option 1">
+        <label for="option1">.5"</label><br>
+        <input type="radio" class="radio-choice-hinge" id="option2" name="group1" value="Option 2">
+        <label for="option2">1"</label><br>
+        <input type="radio" class="radio-choice-hinge" id="option3" name="group1" value="Option 3">
+        <label for="option3">1.25"</label><br>
+        <input type="radio" class="radio-choice-hinge" id="option4" name="group1" value="Option 4">
+        <label for="option4">1.5"</label><br>
       </form>
 
 </div>
@@ -145,53 +146,95 @@
 
 <!-- Pull type section -->
 <div class="div-choice-pull-type">
-    <div class="div-choice-">
-        <p>Standard</p>
+    <div class="div-choice-pull">
+        <p id="p-pull-type">Standard</p>
         <div class="div-image">
         </div>
-            <button>Choose</button>
+        <div>
+            <div class="div-four-inch"></div>
+            <div class="div-six-inch"></div>
+            <div class="div-eight-inch"></div>
+            <div class="div-ten-inch"></div>
+        </div>
+        <button class="button-choice-pull">Choose</button>
     </div>
 
-    <div class="div-choice-">
-        <p>Arch</p>
+    <div class="div-choice-pull">
+        <p id="p-pull-type">Arch</p>
         <div class="div-image">
         </div>
-            <button>Choose</button>
+        <div>
+            <div class="div-four-inch"></div>
+            <div class="div-six-inch"></div>
+            <div class="div-eight-inch"></div>
+            <div class="div-ten-inch"></div>
+        </div>
+            <button class="button-choice-pull">Choose</button>
     </div>
 
-    <div class="div-choice-">
-        <p>Knob</p>
+    <div class="div-choice-pull">
+        <p id="p-pull-type">Knob</p>
         <div class="div-image">
         </div>
-        <button>Choose</button>
+        <div>
+            <div class="div-four-inch"></div>
+            <div class="div-six-inch"></div>
+            <div class="div-eight-inch"></div>
+            <div class="div-ten-inch"></div>
+        </div>
+        <button class="button-choice-pull">Choose</button>
     </div>
 
-    <div class="div-choice-">
-        <p>Sundial</p>
+    <div class="div-choice-pull">
+        <p id="p-pull-type">Sundial</p>
         <div class="div-image">
         </div>
-        <button>Choose</button>
+        <div>
+            <div class="div-four-inch"></div>
+            <div class="div-six-inch"></div>
+            <div class="div-eight-inch"></div>
+            <div class="div-ten-inch"></div>
+        </div>
+        <button class="button-choice-pull">Choose</button>
     </div>
 
-    <div class="div-choice-bright-aqua">
-        <p>Curved</p>
+    <div class="div-choice-pull">
+        <p id="p-pull-type">Curved</p>
         <div class="div-image">
         </div>
-        <button>Choose</button>
+        <div>
+            <div class="div-four-inch"></div>
+            <div class="div-six-inch"></div>
+            <div class="div-eight-inch"></div>
+            <div class="div-ten-inch"></div>
+        </div>
+        <button class="button-choice-pull">Choose</button>
     </div>
 
-    <div class="div-choice-bright-aqua">
-        <p>Royal</p>
+    <div class="div-choice-pull">
+        <p id="p-pull-type">Royal</p>
         <div class="div-image">
         </div>
-        <button>Choose</button>
+        <div>
+            <div class="div-four-inch"></div>
+            <div class="div-six-inch"></div>
+            <div class="div-eight-inch"></div>
+            <div class="div-ten-inch"></div>
+        </div>
+        <button class="button-choice-pull">Choose</button>
     </div>
 
-    <div class="div-choice-bright-aqua">
-        <p>Ancient</p>
+    <div class="div-choice-pull">
+        <p id="p-pull-type">Ancient</p>
         <div class="div-image">
         </div>
-        <button>Choose</button>
+        <div>
+            <div class="div-four-inch"></div>
+            <div class="div-six-inch"></div>
+            <div class="div-eight-inch"></div>
+            <div class="div-ten-inch"></div>
+        </div>
+        <button class="button-choice-pull">Choose</button>
     </div>
 </div>
 
@@ -203,7 +246,8 @@
 <div class="div-choice-location-form">
     <form>
         <label>Location Name</label>
-        <input>
+        <input id="input-location-name">
+        <submit id="submit-location-name">Submit</submit>
     </form>
 </div>
 </div>
@@ -212,16 +256,13 @@
 <div class="choice-save-location">
     <h1>Click the save button to add location</h1>
     <p>Location will be added to locations.</p>
-    <button>Save</button>
+    <button class="button-choice-save-location">Save</button>
     <div class="div-order-container">
         <h1>Now that you location is setup, would you like to place an order?</h1>
         <button>Place Order</button>
+        <button>Locations</button>
     </div>
 </div>
-
-
-
-
 
 </div>
 

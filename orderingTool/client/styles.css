@@ -1,0 +1,94 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #202020;
+    color: #ffffff;
+    padding: 20px 10%;
+    text-align: center;
+}
+
+main, section {
+    padding: 20px 10%;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Styling Forms */
+form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e8e8e8;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Styling Specific Sections */
+.div-login-container, .div-location-setup, .div-choice-pull-type {
+    margin-top: 20px;
+}
+
+.div-choice-cabinet, .div-choice-color, .div-choice-pull {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.div-cabinet-image, .div-image {
+    width: 100px;
+    height: 100px;
+    background-color: #ddd;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radio-choice-hinge {
+    margin-right: 10px;
+}
+
+/* Enhancing Visuals for Modern Look */
+.div-choice-cabinet div, .div-choice-color div, .div-choice-pull div {
+    transition: transform 0.3s ease;
+}
+
+.div-choice-cabinet div:hover, .div-choice-color div:hover, .div-choice-pull div:hover {
+    transform: scale(1.05);
+}
