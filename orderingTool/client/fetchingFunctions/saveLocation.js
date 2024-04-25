@@ -1,5 +1,5 @@
 const buttonSave = document.querySelector('.button-choice-save-location');
-
+const sectionAddLocation = document.querySelector('.section-add-location')
 buttonSave.addEventListener('click', async function (event) {
     event.preventDefault(); // Prevent the default form submission behavior
 
@@ -28,6 +28,7 @@ buttonSave.addEventListener('click', async function (event) {
         const result = await response.json();
         console.log('Save successful:', result);
         alert('Save successful!');
+        sectionAddLocation.classList.add('hide');
     } catch (error) {
         console.error('Save failed:', error);
         alert('Save failed: ' + error.message);

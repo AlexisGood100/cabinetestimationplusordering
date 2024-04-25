@@ -92,3 +92,8 @@ button:hover {
 .div-choice-cabinet div:hover, .div-choice-color div:hover, .div-choice-pull div:hover {
     transform: scale(1.05);
 }
+
+
+.hide{
+    display: none;
+}

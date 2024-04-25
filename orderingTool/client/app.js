@@ -10,6 +10,8 @@ let accountSubmissionObj = {
     locationName: null
 }
 
+
+
 // const createAccount = (submissionObject)=>{ //this is to finalize the location
 // const accountSubmissionObj = {
 //     cabinetType : submissionObject.cabinetType,

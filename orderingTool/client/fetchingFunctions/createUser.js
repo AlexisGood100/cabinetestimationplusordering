@@ -1,4 +1,5 @@
-
+const sectionCreateAccount = document.querySelector('.section-create-account')
+const sectionUserLogin = document.querySelector('.section-user-login')
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById("form-create-account").addEventListener('submit', async function (event) {
         event.preventDefault(); // Prevent the default form submission
@@ -26,11 +27,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             const result = await response.json();
             alert("Account created: " + result.message);
+            sectionCreateAccount.classList.add('hide')
         } catch (error) {
             console.error('Error:', error);
             alert("Failed to create account");
         }
-
     });
 
 
@@ -66,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const result = await response.json();
             console.log('Login successful:', result);
             alert('Login successful!');
+            sectionUserLogin.classList.add('hide')
         } catch (error) {
             console.error('Login failed:', error);
             alert('Login failed: ' + error.message);

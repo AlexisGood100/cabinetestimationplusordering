@@ -14,45 +14,50 @@
     </header>
 <!-- Create Account section (backend access => Users) -->
     <main>
+<section class="section-create-account">
 
-        <h1>Please create an account to begin ordering.</h1>
-        <form id="form-create-account">
-
-            <div>
-                <label>Desired Username</label>
-                <input type='text' id="User-desiredUsername">
-                <label>First Name</label>
-                <input type='text' id="User-fName">
-                <label>Last Name</label>
-                <input type='text' id="User-lName">
-                <label>Email</label>
-                <input type='text' id="User-email">
-                <label>Birth Date</label>
-                <input type='text' id="User-birthDate">
-                <label>Password</label>
-                <input type='text' id="User-password">
-                <button type="submit" class="submit-user-data">Create Account</button>
+    <h1>Please create an account to begin ordering.</h1>
+    <form id="form-create-account">
+        
+        <div>
+            <label>Desired Username</label>
+            <input type='text' id="User-desiredUsername">
+            <label>First Name</label>
+            <input type='text' id="User-fName">
+            <label>Last Name</label>
+            <input type='text' id="User-lName">
+            <label>Email</label>
+            <input type='text' id="User-email">
+            <label>Birth Date</label>
+            <input type='text' id="User-birthDate">
+            <label>Password</label>
+            <input type='text' id="User-password">
+            <button type="submit" class="submit-user-data">Create Account</button>
         </form>
+    </section>
         
         </div>
-        <!-- End of account creation -->
-
-        <!-- Section login (backend access => Users get confirm account) -->
-        <div class="div-login-container">
-            <form id="loginForm" onsubmit="handleLogin(event)">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-        
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-        
-                <button type="submit">Login</button>
-            </form>
-        </div>
+        <section class="section-user-login">
+            <!-- End of account creation -->
+            
+            <!-- Section login (backend access => Users get confirm account) -->
+            <div class="div-login-container">
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" required>
+                    
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </section>
+    </main>
         <!-- End of login -->
 
 <!-- Setting up an account (backend access => locations) (only the location is saved to backend, the images ect are frontend.) -->
-        <section>
+        <section class="section-add-location">
             <h1>To begin ordering, you need to setup a location.</h1>
             <div class="div-location-setup">
 
