@@ -29,7 +29,18 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true } // Password is not encrypted in this version
 });
 
+const locationSchema = new mongoose.Schema({
+    cabinetType: {type: String, required: true},
+    cabinetColor: {type: String, required: true},
+    hingeOverlay: {type: String, required: true},
+    pullType: {type: String, required: true},
+    pullSize: {type: String, required: true},
+    locationName: {type: String, required: true}
+});
+
+
 const User = mongoose.model('User', userSchema);
+const Location = mongoose.model('Location', locationSchema);
 
 // POST Endpoint to create an account
 app.post('/create-account', async (req, res) => {
@@ -42,6 +53,31 @@ app.post('/create-account', async (req, res) => {
         res.status(500).json({ message: "Error creating user" });
     }
 });
+// POST Endpoint to create a location
+app.post('/create-location', async (req, res) => {
+    try { 
+        const newLocation = new Location(req.body);
+        await newLocation.save();
+        res.status(201).json({ message: "Location created successfully!" });
+    } catch (error) {
+        console.error('Failed to create user:', error);
+        res.status(500).json({ message: "Error creating user"});
+    }
+});
+// end of location endpoint
+
+//getting the locations
+app.get('/locations', async (req, res) => {
+    try {
+        const locations = await Location.find();
+        res.json(locations);
+    } catch (error) {
+        console.error('Failed to fetch locations:', error);
+        res.status(500).json({ message: "Failed to fetch locations" });
+    }
+});
+
+//end of getting the locations
 
 // Login Endpoint
 app.post('/login', async (req, res) => {
@@ -81,4 +117,8 @@ app.get('/protected', verifyToken, (req, res) => {
     res.json({ message: 'Protected route accessed successfully', userId: req.userId });
 });
 
+
+
+
 app.listen(3000, () => console.log('Server is running on http://localhost:3000'));
+
