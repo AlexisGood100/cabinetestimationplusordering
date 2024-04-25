@@ -7,12 +7,10 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-image: url('images/mainHeaderBackground.jpg');
 }
 
 header {
-    background-color: #202020;
     color: #ffffff;
     padding: 20px 10%;
     text-align: center;
@@ -63,13 +61,13 @@ button:hover {
     margin-top: 20px;
 }
 
-.div-choice-cabinet, .div-choice-color, .div-choice-pull {
+.div-choice-cabinet, .div-choice-color {
     display: flex;
-    /* align-items: center; */
     justify-content: space-between;
     margin-bottom: 20px;
+    background-color: white;
 }
-
+/* 
 .div-cabinet-image, .div-image {
     width: 100px;
     height: 100px;
@@ -78,7 +76,7 @@ button:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .radio-choice-hinge {
     margin-right: 10px;
@@ -96,4 +94,78 @@ button:hover {
 
 .hide{
     display: none;
+}
+
+.h1-create-account{
+    color:white;
+    text-align: center;
+}
+
+.h1-login-account{
+    color:white;
+    text-align: center;
+}
+
+
+
+/* Pulls */
+
+.div-choice-pull-type{
+    margin:1rem;
+    text-align: center;
+    color:white;
+}
+.div-pull-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.div-choice-pull{
+    height:330px;
+    width:360px;
+    margin:0 auto;
+    box-shadow: 2px 2px 2px 2px solid black;
+    border:1px solid white;
+}
+
+.div-image-pull{
+    margin:.5rem;
+    height:250px;
+    width:350px;
+    box-shadow: 2px 2px 2px 2px solid black;
+}
+
+.pull-standard{
+    background-image: url('images/pulls/normalTypePull.jpg');
+    background-position: center;
+}
+
+.pull-curved{
+    background-image: url('images/pulls/curvedPullType.jpg');
+    background-position: center;
+}
+
+.pull-ancient{
+    background-image: url('images/pulls/ancientPullType.jpg');
+    background-position: center;
+}
+
+.pull-royal{
+    background-image: url('images/pulls/royalTypePull.jpg');
+    background-position: center;
+}
+
+.pull-sundial{
+    background-image: url('images/pulls/sunDialTypePull.jpg');
+    background-position: center;
+}
+
+.pull-knob{
+    background-image: url('images/pulls/knobTypePull.jpg');
+    background-position: center;
+}
+
+.pull-arch{
+    background-image: url('images/pulls/archTypePull.jpg');
+    background-position: center;
 }

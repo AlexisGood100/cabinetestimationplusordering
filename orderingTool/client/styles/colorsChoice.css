@@ -1,0 +1,41 @@
+/* Colors */
+.div-for-color-choice{
+    text-align: center;
+    border:1px solid white;
+    padding:1rem;
+}
+.h1-choose-color{
+    color:white;
+}
+
+
+.div-choice-crimson-black-silver{
+    background-image: url('../images/colors/colorCrimsonBlackSilver.jpg');
+    color:white;
+    border:white 2px solid;
+}
+
+
+.div-choice-voilet-teal{
+background-image: url('../images/colors/colorVioletTeal.jpg');
+    color:white;
+    border:white 2px solid;
+}
+
+.div-choice-burnt-orange{
+background-image: url('../images/colors/colorBurntOrange.jpg');
+    color:white;
+    border:white 2px solid;
+}
+
+.div-choice-green-orange-pink{
+background-image: url('../images/colors/colorOrangePinkGreen.jpg');
+    color:white;
+    border:white 2px solid;
+}
+
+.div-choice-bright-aqua{
+background-image: url('../images/colors/colorBrightAqua.jpg');
+    color:white;
+    border:white 2px solid;
+}

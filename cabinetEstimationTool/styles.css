@@ -3,5 +3,7 @@ header{
 }
 body{
     color:white;
+    background-image: url('images/backgroundCabEst.jpg');
+    background-position: center;
 }
 

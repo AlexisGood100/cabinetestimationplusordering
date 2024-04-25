@@ -5,18 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/locationsTable.css">
+    <link rel="stylesheet" href="styles/colorsChoice.css">
+    <link rel="stylesheet" href="styles/pullChoices.css">
     <link rel="stylesheet" href="styles.css">
     <!-- <script src="app.js"></script> -->
 </head>
 <body>
-    <header>
+
+
+    <header class="main-header">
         <h1>Welcome to the ordering Application</h1>
     </header>
+
+
+
 <!-- Create Account section (backend access => Users) -->
     <main>
 <section class="section-create-account">
 
-    <h1>Please create an account to begin ordering.</h1>
+    <h1 class="h1-create-account">Please create an account to begin ordering.</h1>
     <form id="form-create-account">
         
         <div>
@@ -39,7 +48,7 @@
         </div>
         <section class="section-user-login">
             <!-- End of account creation -->
-            
+            <h1 class="h1-login-account">Enter credentials to login to account.</h1>
             <!-- Section login (backend access => Users get confirm account) -->
             <div class="div-login-container">
                 <form id="loginForm" onsubmit="handleLogin(event)">
@@ -55,6 +64,15 @@
         </section>
     </main>
         <!-- End of login -->
+
+        <section class="section-home-screen">
+            <div class="div-home-container">
+                
+            </div>
+
+
+
+        </section>
 
 <!-- Setting up an account (backend access => locations) (only the location is saved to backend, the images ect are frontend.) -->
         <section class="section-add-location">
@@ -92,7 +110,9 @@
                     <!-- end of style -->
 
 <div class="div-for-color-choice">
-
+<h1 class="h1-choose-color">
+    Please choose a color
+</h1>
         <div class="div-choice-color div-choice-crimson-black-silver">
                             <p>Crimson Black Silver</p>
                             <div class="div-image">
@@ -151,98 +171,104 @@
 
 <!-- Pull type section -->
 <div class="div-choice-pull-type">
-    <div class="div-choice-pull">
-        <p id="p-pull-type">Standard</p>
-        <div class="div-image">
-        </div>
-        <div>
-            <div class="div-four-inch"></div>
-            <div class="div-six-inch"></div>
-            <div class="div-eight-inch"></div>
-            <div class="div-ten-inch"></div>
-        </div>
-        <button class="button-choice-pull">Choose</button>
-    </div>
+    <h1 class="h1-pull-type">
+        Choose Pull Type
+    </h1>
+    <div class="div-pull-container">
 
-    <div class="div-choice-pull">
-        <p id="p-pull-type">Arch</p>
-        <div class="div-image">
-        </div>
-        <div>
-            <div class="div-four-inch"></div>
-            <div class="div-six-inch"></div>
-            <div class="div-eight-inch"></div>
-            <div class="div-ten-inch"></div>
-        </div>
+        <div class="div-choice-pull">
+            <p id="p-pull-type">Standard</p>
+            <div class="div-image-pull pull-standard">
+            </div>
+            <div>
+                <div class="div-four-inch"></div>
+                <div class="div-six-inch"></div>
+                <div class="div-eight-inch"></div>
+                <div class="div-ten-inch"></div>
+            </div>
             <button class="button-choice-pull">Choose</button>
-    </div>
-
-    <div class="div-choice-pull">
-        <p id="p-pull-type">Knob</p>
-        <div class="div-image">
         </div>
-        <div>
-            <div class="div-four-inch"></div>
-            <div class="div-six-inch"></div>
-            <div class="div-eight-inch"></div>
-            <div class="div-ten-inch"></div>
+        
+        <div class="div-choice-pull">
+            <p id="p-pull-type">Arch</p>
+            <div class="div-image-pull pull-arch">
+            </div>
+            <div>
+                <div class="div-four-inch"></div>
+                <div class="div-six-inch"></div>
+                <div class="div-eight-inch"></div>
+                <div class="div-ten-inch"></div>
+            </div>
+            <button class="button-choice-pull">Choose</button>
         </div>
-        <button class="button-choice-pull">Choose</button>
-    </div>
-
-    <div class="div-choice-pull">
-        <p id="p-pull-type">Sundial</p>
-        <div class="div-image">
+        
+        <div class="div-choice-pull">
+            <p id="p-pull-type">Knob</p>
+            <div class="div-image-pull pull-knob">
+            </div>
+            <div>
+                <div class="div-four-inch"></div>
+                <div class="div-six-inch"></div>
+                <div class="div-eight-inch"></div>
+                <div class="div-ten-inch"></div>
+            </div>
+            <button class="button-choice-pull">Choose</button>
         </div>
-        <div>
-            <div class="div-four-inch"></div>
-            <div class="div-six-inch"></div>
-            <div class="div-eight-inch"></div>
-            <div class="div-ten-inch"></div>
+        
+        <div class="div-choice-pull">
+            <p id="p-pull-type">Sundial</p>
+            <div class="div-image-pull pull-sundial">
+            </div>
+            <div>
+                <div class="div-four-inch"></div>
+                <div class="div-six-inch"></div>
+                <div class="div-eight-inch"></div>
+                <div class="div-ten-inch"></div>
+            </div>
+            <button class="button-choice-pull">Choose</button>
         </div>
-        <button class="button-choice-pull">Choose</button>
-    </div>
-
-    <div class="div-choice-pull">
-        <p id="p-pull-type">Curved</p>
-        <div class="div-image">
+        
+        <div class="div-choice-pull">
+            <p id="p-pull-type">Curved</p>
+            <div class="div-image-pull pull-curved">
+            </div>
+            <div>
+                <div class="div-four-inch"></div>
+                <div class="div-six-inch"></div>
+                <div class="div-eight-inch"></div>
+                <div class="div-ten-inch"></div>
+            </div>
+            <button class="button-choice-pull">Choose</button>
         </div>
-        <div>
-            <div class="div-four-inch"></div>
-            <div class="div-six-inch"></div>
-            <div class="div-eight-inch"></div>
-            <div class="div-ten-inch"></div>
+        
+        <div class="div-choice-pull">
+            <p id="p-pull-type">Royal</p>
+            <div class="div-image-pull pull-royal">
+            </div>
+            <div>
+                <div class="div-four-inch"></div>
+                <div class="div-six-inch"></div>
+                <div class="div-eight-inch"></div>
+                <div class="div-ten-inch"></div>
+            </div>
+            <button class="button-choice-pull">Choose</button>
         </div>
-        <button class="button-choice-pull">Choose</button>
-    </div>
-
-    <div class="div-choice-pull">
-        <p id="p-pull-type">Royal</p>
-        <div class="div-image">
+        
+        <div class="div-choice-pull">
+            <p id="p-pull-type">Ancient</p>
+            <div class="div-image-pull pull-ancient">
+            </div>
+            <div>
+                <div class="div-four-inch"></div>
+                <div class="div-six-inch"></div>
+                <div class="div-eight-inch"></div>
+                <div class="div-ten-inch"></div>
+            </div>
+            <button class="button-choice-pull">Choose</button>
         </div>
-        <div>
-            <div class="div-four-inch"></div>
-            <div class="div-six-inch"></div>
-            <div class="div-eight-inch"></div>
-            <div class="div-ten-inch"></div>
-        </div>
-        <button class="button-choice-pull">Choose</button>
-    </div>
-
-    <div class="div-choice-pull">
-        <p id="p-pull-type">Ancient</p>
-        <div class="div-image">
-        </div>
-        <div>
-            <div class="div-four-inch"></div>
-            <div class="div-six-inch"></div>
-            <div class="div-eight-inch"></div>
-            <div class="div-ten-inch"></div>
-        </div>
-        <button class="button-choice-pull">Choose</button>
     </div>
 </div>
-
+    
 <!-- End of the pull section -->
 
 <!-- name of location (backend access => locations) -->
