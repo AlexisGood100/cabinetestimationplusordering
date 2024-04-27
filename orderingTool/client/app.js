@@ -16,8 +16,8 @@ let accountSubmissionObj = {
     cabinetColor: null,
     hingeOverlay: null,
     pullType: null,
-    pullSize: null,
-    locationName: null
+    pullSize: 6,
+    locationName: null,
 }
 
 let cabinetType = null;
@@ -26,3 +26,6 @@ let cabinetType = null;
 document.querySelector('.button-display-locations').addEventListener('click', ()=>{
     fetchAndDisplayLocations()
 });
+
+
+

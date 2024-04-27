@@ -18,14 +18,33 @@ async function fetchAndDisplayLocations() {
         locations.forEach(location => {
             const newRow = locationBody.insertRow();
             newRow.innerHTML = `
+                <td>${location.locationName}</td>
                 <td>${location.cabinetType}</td>
                 <td>${location.cabinetColor}</td>
                 <td>${location.hingeOverlay}</td>
                 <td>${location.pullType}</td>
                 <td>${location.pullSize}</td>
-                <td>${location.locationName}</td>
-            `;
+                `;
+                newRow.addEventListener('click', ()=>{
+                    accountSubmissionObj.locationName = location.locationName
+                    accountSubmissionObj.cabinetType = location.cabinetType
+                    accountSubmissionObj.cabinetColor = location.cabinetColor
+                    accountSubmissionObj.hingeOverlay = location.hingeOverlay
+                    accountSubmissionObj.pullType = location.pullType
+                    accountSubmissionObj.pullSize = location.pullSize
+                    
+                    document.querySelector('.section-table-locations').classList.add('hide');
+                    let spanLocationsAll = document.querySelectorAll('.span-location-information');
+                    console.log(spanLocationsAll)
+                    spanLocationsAll[0].innerText = location.locationName
+                    spanLocationsAll[1].innerText = location.cabinetType
+                    spanLocationsAll[2].innerText = location.cabinetColor
+                    spanLocationsAll[3].innerText = location.hingeOverlay
+                    spanLocationsAll[4].innerText = location.pullType
+                    spanLocationsAll[5].innerText = location.pullSize
+                })
         });
+
 
         alert('Locations fetched and displayed successfully!');
     } catch (error) {

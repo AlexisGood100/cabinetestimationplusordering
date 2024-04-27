@@ -1,12 +1,32 @@
 table {
     width: 100%;
     border-collapse: collapse;
+    box-shadow: 2px 2px 3px 4px black;
 }
+
+td {
+    color:white;
+
+}
+
 th, td {
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    box-shadow: 2px 2px 2px 1px black;
 }
 th {
     background-color: #f2f2f2;
+}
+
+
+
+/* Location form h1 ect */
+.h1-location-name{
+    text-align: center;
+    color:white;
+}
+
+.button-choice-save-location{
+    margin-left: 50%;;
 }

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="styles/locationsTable.css">
     <link rel="stylesheet" href="styles/colorsChoice.css">
     <link rel="stylesheet" href="styles/pullChoices.css">
+    <link rel="stylesheet" href="styles/hingeChoice.css">   
+    <link rel="stylesheet" href="styles/orderingSection.css">
     <link rel="stylesheet" href="styles.css">
     <!-- <script src="app.js"></script> -->
 </head>
@@ -76,14 +78,14 @@
 
 <!-- Setting up an account (backend access => locations) (only the location is saved to backend, the images ect are frontend.) -->
         <section class="section-add-location">
-            <h1>To begin ordering, you need to setup a location.</h1>
+            <h1 class="h1-add-location">To begin ordering, you need to setup a location.</h1>
             <div class="div-location-setup">
 
                 <div class="div-choices">
 
                     <!-- Start of style choices -->
                     <div class="div-choice-for-cabinet-style">
-                        <h1>Please choose a cabinet style.</h1>
+                        <h1 class="h1-add-location">Please choose a cabinet style.</h1>
 
                         <div class="div-choice-cabinet div-choice-wood">
                             <p>Wood</p>
@@ -153,18 +155,20 @@
 
 <!-- Hinge overlay -->
 <div class="div-choice-hinge-overlay">
-    <h1>Choose the hinge size that you will be using</h1>
-    <form>
-        <input type="radio" class="radio-choice-hinge" id="option1" name="group1" value="Option 1">
-        <label for="option1">.5"</label><br>
-        <input type="radio" class="radio-choice-hinge" id="option2" name="group1" value="Option 2">
-        <label for="option2">1"</label><br>
-        <input type="radio" class="radio-choice-hinge" id="option3" name="group1" value="Option 3">
-        <label for="option3">1.25"</label><br>
-        <input type="radio" class="radio-choice-hinge" id="option4" name="group1" value="Option 4">
-        <label for="option4">1.5"</label><br>
-      </form>
-
+    <h1 class="h1-hinge">Choose the hinge size that you will be using</h1>
+    <p class="p-hinge">Choice: <span class="choice-span">0</span></p>
+    <div class="div-form-hinge-choice">
+        <form class="form-hinge-choice">
+            <input type="radio" class="radio-choice-hinge" id="option1" name="group1" value=".5">
+            <label for="option1 label-radio-hinge" id="label-radio-hinge">.5</label><br>
+            <input type="radio" class="radio-choice-hinge" id="option2" name="group1" value="1">
+            <label for="option2 label-radio-hinge" id="label-radio-hinge">1</label><br>
+            <input type="radio" class="radio-choice-hinge" id="option3" name="group1" value="1.25">
+            <label for="option3 label-radio-hinge" id="label-radio-hinge">1.25</label><br>
+            <input type="radio" class="radio-choice-hinge" id="option4" name="group1" value="1.5">
+            <label for="option4 label-radio-hinge" id="label-radio-hinge">1.5</label><br>
+        </form>
+    </div>
 </div>
 <!-- End of hinge overlay -->
 
@@ -273,7 +277,7 @@
 
 <!-- name of location (backend access => locations) -->
 <div class="div-choice-location-information">
-    <h1>Enter name of location</h1>
+    <h1 class="h1-location-name">Enter name of location</h1>
 <div class="div-choice-location-form">
     <form>
         <label>Location Name</label>
@@ -285,8 +289,8 @@
 <!-- end of location name -->
 
 <div class="choice-save-location">
-    <h1>Click the save button to add location</h1>
-    <p>Location will be added to locations.</p>
+    <h1 class="h1-location-name">Click the save button to add location</h1>
+    <p class="h1-location-name">Location will be added to locations.</p>
     <button class="button-choice-save-location">Save</button>
 </section>
 
@@ -313,23 +317,45 @@
         <!-- End of choices section -->
 
         <!-- Ordering Screen -->
-        <h2>Choose a location to begin ordering</h2>
+        <section class="section-table-locations">
+            <h2>Choose a location to begin ordering</h2>
+            
+            <table id="locationTable">
+                <thead>
+                    <tr>
+                        <th>Location Name</th>
+                        <th>Cabinet Type</th>
+                        <th>Cabinet Color</th>
+                        <th>Hinge Overlay</th>
+                        <th>Pull Type</th>
+                        <th>Pull Size</th>
+                    </tr>
+                </thead>
+                <tbody id="locationBody">
+                    <!-- Table rows will be dynamically populated using JavaScript -->
+                </tbody>
+            </table>
+        </section>
 
-<table id="locationTable">
-    <thead>
-        <tr>
-            <th>Cabinet Type</th>
-            <th>Cabinet Color</th>
-            <th>Hinge Overlay</th>
-            <th>Pull Type</th>
-            <th>Pull Size</th>
-            <th>Location Name</th>
-        </tr>
-    </thead>
-    <tbody id="locationBody">
-        <!-- Table rows will be dynamically populated using JavaScript -->
-    </tbody>
-</table>
+
+
+
+<div class="div-open-location-order">
+<h1 class="h1-ordering-section">Ordering Section</h1>
+<div class="div-location-information">
+<p>Location Name: <span class="span-location-information">0</span> </p>
+<p>Style: <span class="span-location-information">0</span></p>
+<p>Color: <span class="span-location-information">0</span></p>
+<p>Hinge Overlay: <span class="span-location-information">0</span> </p>
+<p>Pull Style: <span class="span-location-information">0</span> </p>
+<p>Pull Size: <span class="span-location-information">0</span> </p>
+</div>
+</div>
+
+
+
+
+
 
 
 <!-- Home  -->
@@ -340,12 +366,13 @@
 
 
     </main>
+    <script src="fetchingFunctions/userLogin.js"></script>
+    <script src="eventListeners/Click/chooseHinge.js"></script> 
     <script src="eventListeners/Click/chooseColor.js"></script>
     <script src="eventListeners/Click/chooseTypeOfCabinet.js"></script>
     <script src="eventListeners/Click/pullType.js"></script>
     <script src="eventListeners/Click/pullSize.js"></script>
     <script src="eventListeners/Click/submitLocationsName.js"></script>
-    <script src="eventListeners/Click/radioButtons.js"></script>
     <script src="fetchingFunctions/createUser.js"></script>
     <script src="fetchingFunctions/saveLocation.js"></script>
     <script src="fetchingFunctions/fetchLocations.js"></script>

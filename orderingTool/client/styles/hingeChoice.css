@@ -1,0 +1,36 @@
+/* Hinge choice section styles */
+.h1-hinge{
+    color:white;
+    text-align: center;
+}
+
+
+.p-hinge{
+    color:white;
+    text-align: center;
+    margin:.2rem;
+}
+
+.radio-choice-hinge {
+    margin-right: 10px;
+    width:5%;
+}
+
+
+/* .div-form-hinge-choice{
+    display:flex;
+} */
+
+.form-hinge-choice{
+    display:flex;
+    justify-content: center;
+}
+
+/* .label-radio-hinge{
+    margin-right: 10%;
+} */
+
+.form-hinge-choice{
+width:100%;
+box-shadow: 2px 2px 2px 2px black;
+}

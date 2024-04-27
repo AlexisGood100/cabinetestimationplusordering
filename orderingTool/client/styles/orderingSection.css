@@ -1,0 +1,16 @@
+.div-location-information{
+    display:flex;
+    justify-content: center;
+}
+
+.div-open-location-order{
+    color:white;
+}
+.div-location-information p{
+margin:1rem;
+}
+
+.div-open-location-order h1{
+   color:white;
+   text-align: center;
+}
