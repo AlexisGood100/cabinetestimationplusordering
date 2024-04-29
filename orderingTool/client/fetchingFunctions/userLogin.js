@@ -31,6 +31,7 @@ const loginForm = document.getElementById('loginForm');
             console.log('Login successful:', result);
             alert('Login successful!');
             sectionUserLogin.classList.add('hide')
+            document.querySelector('.section-add-location').classList.remove('hide')
             
         } catch (error) {
             console.error('Login failed:', error);

@@ -116,9 +116,5 @@ function verifyToken(req, res, next) {
 app.get('/protected', verifyToken, (req, res) => {
     res.json({ message: 'Protected route accessed successfully', userId: req.userId });
 });
-
-
-
-
-app.listen(3000, () => console.log('Server is running on http://localhost:3000'));
+  
 

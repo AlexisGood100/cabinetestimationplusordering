@@ -13,6 +13,3 @@ let cabinetType = null;
 document.querySelector('.button-display-locations').addEventListener('click', ()=>{
     fetchAndDisplayLocations()
 });
-
-
-

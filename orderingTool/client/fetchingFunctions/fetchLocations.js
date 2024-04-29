@@ -42,10 +42,11 @@ async function fetchAndDisplayLocations() {
                     spanLocationsAll[3].innerText = location.hingeOverlay
                     spanLocationsAll[4].innerText = location.pullType
                     spanLocationsAll[5].innerText = location.pullSize
+                    document.querySelector('.section-div-open-location-order').classList.remove('hide')
                 })
         });
-
-
+        // document.querySelector('.section-div-open-location-order').classList.remove('hide');
+        document.querySelector('.section-table-locations').classList.remove('hide');
         alert('Locations fetched and displayed successfully!');
     } catch (error) {
         console.error('Failed to fetch locations:', error);

@@ -1,5 +1,43 @@
-main-header{
+.main-header{
     height:200px;
     text-align: center;
     color:white;
+    width:100vw;
+    display: flex;
 } 
+
+.div-header-logo{
+    width:400px;
+    height:200px;
+background-image: url('../images/mainHeaderLogo/logoOrderingtool.jpg');
+background-position: center;
+box-shadow:2px 2px 2px 4px black;
+border:1px solid white;
+/* position: absolute; */
+margin-right:10%;
+}
+
+.div-header-logo-rs{
+    width:400px;
+    height:200px;
+background-image: url('../images/mainHeaderLogo/logorightSide.jpg');
+background-position: center;
+box-shadow:2px 2px 2px 4px black;
+border:1px solid white;
+/* position: absolute; */
+margin-left:10%;
+}
+
+.div-about-us{
+    width:400px;
+    height:200px;
+background-position: center;
+box-shadow:2px 2px 2px 4px black;
+border:1px solid white;
+color:white;
+/* margin-left:10%; */
+}
+
+.div-about-us p{
+margin:.5rem;
+}

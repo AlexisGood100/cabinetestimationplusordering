@@ -19,14 +19,26 @@
 
 
     <header class="main-header">
-        <h1>Welcome to the ordering Application</h1>
+        <div class="div-header-logo">
+            
+        </div>
+        <!-- <h1>Welcome to the ordering Application</h1> -->
+        <div class="div-about-us">
+            <p class="p-about-us">About Us</a>
+            <p>Ordering can be difficult, but that is why we are here.</p>
+            <p>With our ordering tool and location setup features, ordering has never been easier.</p>
+            <p><a href="/cabinetEstimationTool/index.html">Ordering Tool</a></p>
+        </div>
+                <div class="div-header-logo-rs">
+            
+                </div>
     </header>
 
 
 
 <!-- Create Account section (backend access => Users) -->
     <main>
-<section class="section-create-account">
+<section class="section-create-account hide">
 
     <h1 class="h1-create-account">Please create an account to begin ordering.</h1>
     <form id="form-create-account">
@@ -49,7 +61,7 @@
     </section>
         
         </div>
-        <section class="section-user-login hide">
+        <section class="section-user-login">
             <!-- End of account creation -->
             <h1 class="h1-login-account">Enter credentials to login to account.</h1>
             <!-- Section login (backend access => Users get confirm account) -->
@@ -112,7 +124,7 @@
                     </div>
                     <!-- end of style -->
 
-<div class="div-for-color-choice">
+<div class="div-for-color-choice hide">
 <h1 class="h1-choose-color">
     Please choose a color
 </h1>
@@ -155,7 +167,7 @@
 
 
 <!-- Hinge overlay -->
-<div class="div-choice-hinge-overlay">
+<div class="div-choice-hinge-overlay hide">
     <h1 class="h1-hinge">Choose the hinge size that you will be using</h1>
     <p class="p-hinge">Choice: <span class="choice-span">0</span></p>
     <div class="div-form-hinge-choice">
@@ -175,7 +187,7 @@
 
 
 <!-- Pull type section -->
-<div class="div-choice-pull-type">
+<div class="div-choice-pull-type hide">
     <h1 class="h1-pull-type">
         Choose Pull Type
     </h1>
@@ -277,7 +289,7 @@
 <!-- End of the pull section -->
 
 <!-- name of location (backend access => locations) -->
-<div class="div-choice-location-information">
+<div class="div-choice-location-information hide">
     <h1 class="h1-location-name">Enter name of location</h1>
 <div class="div-choice-location-form">
     <form>
@@ -321,7 +333,7 @@
 
 
 
-<section class="section-div-open-location-order hide">
+<section class="section-div-open-location-order">
     <div class="div-open-location-order">
         <h1 class="h1-ordering-section">Ordering Section</h1>
         <div class="div-location-information">
@@ -331,6 +343,12 @@
             <p>Hinge Overlay: <span class="span-location-information">0</span> </p>
             <p>Pull Style: <span class="span-location-information">0</span> </p>
             <p>Pull Size: <span class="span-location-information">0</span> </p>
+        </div>
+        <div class="div-container-cabinet-csv-order">
+            <h1>Order Confirmation</h1>
+            <div class="div-cabinet-csv-order">
+
+            </div>
         </div>
     </div>
 </section>
@@ -346,7 +364,7 @@
         <!-- && the locations that have been added, with options for modifying, looking at past orders, getting receipts -->
         <!-- && delete ect.-->
 
-<section class="section-home-screen">
+<section class="section-home-screen hide">
 <div class="div-home-container">
     <div class="div-user-information-container">
         <h1 class="h1-user-name">Hello User</h1>
@@ -360,6 +378,7 @@
 </div>
 
 <!-- Ordering Screen -->
+</section>
 <section class="section-table-locations hide">
     <h2>Choose a location to begin ordering</h2>
     
@@ -379,13 +398,17 @@
         </tbody>
     </table>
 </section>
-</section>
 
-        <!-- end of home -->
+<h1>Upload Excel File</h1>
+<input type="file" id="excelFile" accept=".xlsx, .xls">
+<button onclick="readExcelFile()">Upload and Read</button>
+<pre id="output"></pre>
+
 
 
 
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     <script src="fetchingFunctions/userLogin.js"></script>
     <script src="eventListeners/Click/chooseHinge.js"></script> 
     <script src="eventListeners/Click/chooseColor.js"></script>
@@ -395,7 +418,11 @@
     <script src="eventListeners/Click/submitLocationsName.js"></script>
     <script src="fetchingFunctions/createUser.js"></script>
     <script src="fetchingFunctions/saveLocation.js"></script>
+    <script src="fetchingFunctions/uploadCSV.js"></script>
     <script src="fetchingFunctions/fetchLocations.js"></script>
+    <script src="eventListeners/Click/displayCabinetOrder.js"></script>
+    <script src="eventListeners/Click/readExcelFile.js"></script>
+
     <script src="app.js">
      
         </script>

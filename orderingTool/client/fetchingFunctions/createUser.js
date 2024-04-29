@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const result = await response.json();
             alert("Account created: " + result.message);
             sectionCreateAccount.classList.add('hide')
+            document.querySelector('.section-user-login').classList.remove('hide')
+           
         } catch (error) {
             console.error('Error:', error);
             alert("Failed to create account");
