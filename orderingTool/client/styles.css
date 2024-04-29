@@ -67,16 +67,7 @@ button:hover {
     margin-bottom: 20px;
     background-color: white;
 }
-/* 
-.div-cabinet-image, .div-image {
-    width: 100px;
-    height: 100px;
-    background-color: #ddd;
-    margin-right: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
+
 
 
 
@@ -111,4 +102,6 @@ button:hover {
     color:white;
     text-align: center;
 }
+
+
 

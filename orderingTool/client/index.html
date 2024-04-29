@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/pullChoices.css">
     <link rel="stylesheet" href="styles/hingeChoice.css">   
     <link rel="stylesheet" href="styles/orderingSection.css">
+    <link rel="stylesheet" href="styles/homeScreen.css">
     <link rel="stylesheet" href="styles.css">
     <!-- <script src="app.js"></script> -->
 </head>
@@ -48,7 +49,7 @@
     </section>
         
         </div>
-        <section class="section-user-login">
+        <section class="section-user-login hide">
             <!-- End of account creation -->
             <h1 class="h1-login-account">Enter credentials to login to account.</h1>
             <!-- Section login (backend access => Users get confirm account) -->
@@ -77,7 +78,7 @@
         </section>
 
 <!-- Setting up an account (backend access => locations) (only the location is saved to backend, the images ect are frontend.) -->
-        <section class="section-add-location">
+        <section class="section-add-location hide">
             <h1 class="h1-add-location">To begin ordering, you need to setup a location.</h1>
             <div class="div-location-setup">
 
@@ -288,7 +289,7 @@
 </div>
 <!-- end of location name -->
 
-<div class="choice-save-location">
+<div class="choice-save-location hide">
     <h1 class="h1-location-name">Click the save button to add location</h1>
     <p class="h1-location-name">Location will be added to locations.</p>
     <button class="button-choice-save-location">Save</button>
@@ -301,7 +302,7 @@
 
 
 <!-- order or homepage -->
-<section class="section-order-or-homepage">
+<section class="section-order-or-homepage hide">
 
     <div class="div-order-container">
         <h1>Now that you location is setup, would you like to place an order?</h1>
@@ -316,41 +317,23 @@
 </section>
         <!-- End of choices section -->
 
-        <!-- Ordering Screen -->
-        <section class="section-table-locations">
-            <h2>Choose a location to begin ordering</h2>
-            
-            <table id="locationTable">
-                <thead>
-                    <tr>
-                        <th>Location Name</th>
-                        <th>Cabinet Type</th>
-                        <th>Cabinet Color</th>
-                        <th>Hinge Overlay</th>
-                        <th>Pull Type</th>
-                        <th>Pull Size</th>
-                    </tr>
-                </thead>
-                <tbody id="locationBody">
-                    <!-- Table rows will be dynamically populated using JavaScript -->
-                </tbody>
-            </table>
-        </section>
+       
 
 
 
-
-<div class="div-open-location-order">
-<h1 class="h1-ordering-section">Ordering Section</h1>
-<div class="div-location-information">
-<p>Location Name: <span class="span-location-information">0</span> </p>
-<p>Style: <span class="span-location-information">0</span></p>
-<p>Color: <span class="span-location-information">0</span></p>
-<p>Hinge Overlay: <span class="span-location-information">0</span> </p>
-<p>Pull Style: <span class="span-location-information">0</span> </p>
-<p>Pull Size: <span class="span-location-information">0</span> </p>
-</div>
-</div>
+<section class="section-div-open-location-order hide">
+    <div class="div-open-location-order">
+        <h1 class="h1-ordering-section">Ordering Section</h1>
+        <div class="div-location-information">
+            <p>Location Name: <span class="span-location-information">0</span> </p>
+            <p>Style: <span class="span-location-information">0</span></p>
+            <p>Color: <span class="span-location-information">0</span></p>
+            <p>Hinge Overlay: <span class="span-location-information">0</span> </p>
+            <p>Pull Style: <span class="span-location-information">0</span> </p>
+            <p>Pull Size: <span class="span-location-information">0</span> </p>
+        </div>
+    </div>
+</section>
 
 
 
@@ -362,6 +345,43 @@
         <!-- Next section will be the front interface, which will be the account information, balance ect. -->
         <!-- && the locations that have been added, with options for modifying, looking at past orders, getting receipts -->
         <!-- && delete ect.-->
+
+<section class="section-home-screen">
+<div class="div-home-container">
+    <div class="div-user-information-container">
+        <h1 class="h1-user-name">Hello User</h1>
+        <h1>User information</h1>
+        <div class="div-user-information">
+            <p>Username: <span>0</span></p>
+            <p>Account Balance: <span>0</span></p>
+            <p>Credit Line: <span>0</span></p>
+        </div>
+    </div>
+</div>
+
+<!-- Ordering Screen -->
+<section class="section-table-locations hide">
+    <h2>Choose a location to begin ordering</h2>
+    
+    <table id="locationTable">
+        <thead>
+            <tr>
+                <th>Location Name</th>
+                <th>Cabinet Type</th>
+                <th>Cabinet Color</th>
+                <th>Hinge Overlay</th>
+                <th>Pull Type</th>
+                <th>Pull Size</th>
+            </tr>
+        </thead>
+        <tbody id="locationBody">
+            <!-- Table rows will be dynamically populated using JavaScript -->
+        </tbody>
+    </table>
+</section>
+</section>
+
+        <!-- end of home -->
 
 
 

@@ -1,0 +1,14 @@
+.section-home-screen{
+    color: white;
+    text-align: center;
+    margin:0 auto;
+}
+
+.div-user-information{
+    display:flex;
+    justify-content: center;
+}
+
+.div-user-information p {
+    margin:.5rem;
+}
