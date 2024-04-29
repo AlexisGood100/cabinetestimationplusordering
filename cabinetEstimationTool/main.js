@@ -63,11 +63,12 @@ let allWidths = [];
 let allHeights = [];
 let workOrder_ = null;
 let choosenTier = null;
+let i = 0;
 //End of additional hardware
 document.querySelector('.generatePDF').addEventListener('click', async function() {
     // Assuming you have an object called 'data' with the values you want to print
 
-
+i+=1
     //getting all heights and all widths of cabinets and putting them into arrays   
         CollectTypeOfCabinetAll(arrayOfTypes)
         allWidths_(allWidths)
@@ -175,7 +176,7 @@ const jpgImageBytes = await fetch('jsDragon.jpg').then((res) => res.arrayBuffer(
     // Create a download link and trigger the download
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(pdfBlob);
-    link.download = 'generated.pdf';
+    link.download = `generated pdf ${i}`;
     link.click();
     //End of PDF part
 
@@ -185,11 +186,14 @@ const jpgImageBytes = await fetch('jsDragon.jpg').then((res) => res.arrayBuffer(
 
 
     // Convert data to worksheet
+    if(i >= 1){
+        cabinetArray.splice(1,50)
+    }
     var worksheet = XLSX.utils.json_to_sheet(cabinetArray);
 
     // Create workbook
     var workbook = XLSX.utils.book_new();
-    XLSX.utils.book_append_sheet(workbook, worksheet, 'Sheet1');
+    XLSX.utils.book_append_sheet(workbook, worksheet, `sheet${i}`);
 
     // Save workbook to file
     XLSX.writeFile(workbook, 'output.xlsx');
