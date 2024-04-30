@@ -27,7 +27,7 @@ function readExcelFile() {
         }));
         // document.getElementById('output').textContent = JSON.stringify(cabinets, null, 2);
         // Optional: Store the array of cabinet objects in localStorage
-        displayCabinetOrder(cabinets, document.querySelector('.section-div-open-location-order'));
+        displayCabinetOrder(cabinets, document.querySelector('.div-cabinet-csv-order'));
     };
 
     reader.onerror = function() {

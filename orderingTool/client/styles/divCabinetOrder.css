@@ -1,0 +1,15 @@
+.div-cabinet-order{
+    /* display:flex; */
+    border:1px solid black;
+    display:flex;
+    margin:.5rem;
+    box-shadow: 2px 2px 2px 2px black;
+}
+
+.div-cabinet-order div{
+    width:60vw;
+    margin:.5rem;
+    padding:.5rem;
+    color:white;
+    /* border:1px solid black; */
+}

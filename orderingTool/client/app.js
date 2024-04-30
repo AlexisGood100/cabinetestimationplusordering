@@ -13,3 +13,12 @@ let cabinetType = null;
 document.querySelector('.button-display-locations').addEventListener('click', ()=>{
     fetchAndDisplayLocations()
 });
+//end of location fetching
+
+//start of button for adding form
+const buttonAddCabinetFormInputs = document.querySelector('.button-add-cabinet-to-order');
+buttonAddCabinetFormInputs.addEventListener('click', (e)=>{ 
+e.preventDefault()
+createFormForAddingSingleCabinet()
+});
+//end of button for adding form

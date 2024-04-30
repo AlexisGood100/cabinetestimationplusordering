@@ -1,0 +1,21 @@
+.div-section-excel-form{
+    margin:0 auto;
+    margin-left:30%;
+border:2px solid black;
+width: 25%;
+padding:1rem;
+}
+.section-excel-form{
+    margin:.5rem;
+}
+
+.section-excel-form input{
+    margin:.5rem;
+}
+.h1-excel-file{
+    color: white;
+}
+
+.div-form-add-cabinet{
+    background-color: none;
+}

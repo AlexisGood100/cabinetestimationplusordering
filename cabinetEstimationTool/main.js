@@ -186,9 +186,6 @@ const jpgImageBytes = await fetch('jsDragon.jpg').then((res) => res.arrayBuffer(
 
 
     // Convert data to worksheet
-    if(i >= 1){
-        cabinetArray.splice(1,50)
-    }
     var worksheet = XLSX.utils.json_to_sheet(cabinetArray);
 
     // Create workbook

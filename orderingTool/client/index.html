@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="styles/hingeChoice.css">   
     <link rel="stylesheet" href="styles/orderingSection.css">
     <link rel="stylesheet" href="styles/homeScreen.css">
+    <link rel="stylesheet" href="styles/divCabinetOrder.css">
+    <link rel="stylesheet" href="styles/formExcel.css">
     <link rel="stylesheet" href="styles.css">
     <!-- <script src="app.js"></script> -->
 </head>
@@ -329,23 +331,36 @@
 </section>
         <!-- End of choices section -->
 
-       
-
-
-
-<section class="section-div-open-location-order">
-    <div class="div-open-location-order">
-        <h1 class="h1-ordering-section">Ordering Section</h1>
-        <div class="div-location-information">
-            <p>Location Name: <span class="span-location-information">0</span> </p>
-            <p>Style: <span class="span-location-information">0</span></p>
-            <p>Color: <span class="span-location-information">0</span></p>
-            <p>Hinge Overlay: <span class="span-location-information">0</span> </p>
-            <p>Pull Style: <span class="span-location-information">0</span> </p>
-            <p>Pull Size: <span class="span-location-information">0</span> </p>
-        </div>
+        
+        
+        <section class="section-div-open-location-order">
+            <div class="div-open-location-order">
+                <h1 class="h1-ordering-section">Ordering Section</h1>
+                <div class="div-location-information">
+                    <p>Location Name: <span class="span-location-information">0</span> </p>
+                    <p>Style: <span class="span-location-information">0</span></p>
+                    <p>Color: <span class="span-location-information">0</span></p>
+                    <p>Hinge Overlay: <span class="span-location-information">0</span> </p>
+                    <p>Pull Style: <span class="span-location-information">0</span> </p>
+                    <p>Pull Size: <span class="span-location-information">0</span> </p>
+                </div>
+                <section class="section-excel-form">
+                    <div class="div-section-excel-form">
+                        <h1 class="h1-excel-file">Upload Order File (xlsx)</h1>
+                        <input type="file" id="excelFile" accept=".xlsx, .xls">
+                        <button onclick="readExcelFile()">Upload and Read</button>
+                        <pre id="output"></pre>
+                    </div>
+                    </section>   
         <div class="div-container-cabinet-csv-order">
             <h1>Order Confirmation</h1>
+            <div class="div-add-cabinet-to-order">
+<button class="button-add-cabinet-to-order">Add Cabinet</button>
+<button class="button-order-next-stage">Next</button>
+            </div>
+            <div class="div-cabinet-order-form-add">
+
+            </div>
             <div class="div-cabinet-csv-order">
 
             </div>
@@ -399,10 +414,7 @@
     </table>
 </section>
 
-<h1>Upload Excel File</h1>
-<input type="file" id="excelFile" accept=".xlsx, .xls">
-<button onclick="readExcelFile()">Upload and Read</button>
-<pre id="output"></pre>
+
 
 
 
@@ -418,10 +430,11 @@
     <script src="eventListeners/Click/submitLocationsName.js"></script>
     <script src="fetchingFunctions/createUser.js"></script>
     <script src="fetchingFunctions/saveLocation.js"></script>
-    <script src="fetchingFunctions/uploadCSV.js"></script>
     <script src="fetchingFunctions/fetchLocations.js"></script>
     <script src="eventListeners/Click/displayCabinetOrder.js"></script>
     <script src="eventListeners/Click/readExcelFile.js"></script>
+    <script src="eventListeners/Click/displayCreateSingleCabinet.js"></script>
+    <script src="eventListeners/Click/buttonAddSingleCabinet.js"></script>
 
     <script src="app.js">
      
